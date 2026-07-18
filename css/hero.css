@@ -1,0 +1,6 @@
+/* Hero section styles - only contains styles that need to be extracted from inline CSS */
+
+/* Note: The hero section uses Tailwind utility classes for base styling.
+   This file only contains additional styles that cannot be achieved with Tailwind. */
+
+/* No additional hero-specific styles needed - all responsive overrides are in responsive.css */

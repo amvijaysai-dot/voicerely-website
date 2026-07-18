@@ -1,0 +1,18 @@
+/* Navbar styles - only contains styles that need to be extracted from inline CSS */
+
+/* Note: Most navbar styling is handled by Tailwind utility classes in the HTML.
+   This file contains additional styles that cannot be achieved with Tailwind. */
+
+/* Mobile menu drawer backdrop - hidden by default */
+#mobileMenuDrawer.hidden {
+    display: none;
+}
+
+/* Mobile menu panel transition states */
+#mobileMenuPanel.translate-x-0 {
+    transform: translateX(0);
+}
+
+#mobileMenuPanel.translate-x-full {
+    transform: translateX(100%);
+}

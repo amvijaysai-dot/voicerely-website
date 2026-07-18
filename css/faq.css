@@ -1,0 +1,192 @@
+/* FAQ Page Styles — Voicerely
+   Reuses existing design system
+*/
+
+/* FAQ Category */
+.faq-category {
+    margin-bottom: 48px;
+}
+
+.faq-category-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--v-orange, #f97316);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* FAQ Item */
+.faq-item {
+    background: var(--v-dark, #131316);
+    border-radius: 18px;
+    padding: 0;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.light .faq-item {
+    background: #ffffff;
+    border-color: #d1d5db;
+}
+
+.faq-item:hover {
+    border-color: var(--v-orange, #f97316);
+}
+
+/* FAQ Question */
+.faq-q {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f5f5f6;
+    transition: color 0.2s ease;
+}
+
+.light .faq-q {
+    color: #111827;
+}
+
+.faq-q:hover {
+    color: var(--v-orange, #f97316);
+}
+
+/* FAQ Icon */
+.faq-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--v-orange, #f97316);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* FAQ Answer */
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-a {
+    max-height: 500px;
+}
+
+.faq-a-inner {
+    padding: 0 20px 20px;
+    font-size: 14px;
+    color: #a1a1aa;
+    line-height: 1.7;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.light .faq-a-inner {
+    color: #6b7280;
+}
+
+/* Bottom CTA */
+.bottom-cta {
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--v-dark, #131316);
+    border-radius: 16px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.light .bottom-cta {
+    background: #f3f4f6;
+}
+
+.bottom-cta-heading {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #f5f5f6;
+    margin: 0 0 12px;
+}
+
+.light .bottom-cta-heading {
+    color: #111827;
+}
+
+.bottom-cta-subheading {
+    font-size: 1rem;
+    color: #a1a1aa;
+    margin: 0 0 24px;
+}
+
+.light .bottom-cta-subheading {
+    color: #6b7280;
+}
+
+.bottom-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.cta-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--v-orange, #f97316);
+    color: #1a0a02;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-primary:hover {
+    filter: brightness(110%);
+    transform: translateY(-1px);
+}
+
+.cta-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #a1a1aa;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+}
+
+.light .cta-secondary {
+    background: rgba(0, 0, 0, 0.05);
+    color: #6b7280;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.cta-secondary:hover {
+    color: var(--v-orange, #f97316);
+    border-color: var(--v-orange, #f97316);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .bottom-cta-buttons {
+        flex-direction: column;
+    }
+    
+    .faq-q {
+        padding: 16px;
+    }
+    
+    .faq-a-inner {
+        padding: 0 16px 16px;
+    }
+}

@@ -1,0 +1,256 @@
+/* Layout styles - only contains styles that need to be extracted from inline CSS */
+
+/* Note: Most layout styling is handled by Tailwind utility classes in the HTML.
+   This file contains additional styles that cannot be achieved with Tailwind. */
+
+/* Selection styles */
+::selection {
+    background-color: var(--v-orange);
+    color: white;
+}
+
+/* ============================================================
+   Premium Footer
+   ============================================================ */
+.site-footer {
+    width: 100%;
+    background-color: #0b0b10;
+    border-top: 1px solid #151522;
+    color: #a1a1aa;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.light .site-footer {
+    background-color: #ffffff;
+    border-top-color: #e5e7eb;
+    color: #4b5563;
+}
+
+.footer-inner {
+    max-width: 80rem; /* 7xl */
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem;
+}
+
+/* 3-column grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem 2rem;
+}
+
+.footer-col {
+    min-width: 0;
+}
+
+.footer-brand .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.125rem;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.light .footer-brand .footer-logo {
+    color: #111827;
+}
+
+.footer-desc {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #a1a1aa;
+    max-width: 28ch;
+}
+
+.light .footer-desc {
+    color: #4b5563;
+}
+
+.footer-mail {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #f97316;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-mail:hover {
+    opacity: 0.8;
+}
+
+.footer-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #e4e4e7;
+    margin: 0 0 1.25rem;
+}
+
+.light .footer-heading {
+    color: #111827;
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    font-size: 0.875rem;
+    color: #a1a1aa;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #f97316;
+}
+
+.light .footer-links a {
+    color: #4b5563;
+}
+
+/* Newsletter form */
+.footer-newsletter {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.footer-newsletter input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 2.75rem;
+    padding: 0 1rem;
+    font-size: 0.875rem;
+    color: #ffffff;
+    background-color: #151522;
+    border: 1px solid #1f1f2e;
+    border-radius: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-newsletter input::placeholder {
+    color: #71717a;
+}
+
+.footer-newsletter input:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+}
+
+.light .footer-newsletter input {
+    color: #111827;
+    background-color: #f3f4f6;
+    border-color: #e5e7eb;
+}
+
+.light .footer-newsletter input::placeholder {
+    color: #9ca3af;
+}
+
+.footer-newsletter button {
+    flex: 0 0 auto;
+    height: 2.75rem;
+    padding: 0 1.25rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    background-color: #f97316;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #ea580c;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #151522;
+    font-size: 0.8125rem;
+}
+
+.light .footer-bottom {
+    border-top-color: #e5e7eb;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: #a1a1aa;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+    color: #f97316;
+}
+
+.light .footer-legal a {
+    color: #4b5563;
+}
+
+/* Responsive: stack to single column below 768px */
+@media (max-width: 767px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-inner {
+        padding: 3rem 1.25rem 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-legal {
+        gap: 1.25rem;
+    }
+}
+
+/* Tablet: 2-column layout for mid-size screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem 2rem;
+    }
+}

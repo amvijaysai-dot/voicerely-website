@@ -1,0 +1,211 @@
+/* Responsive styles - all media queries */
+
+/* ============================================================
+   DESKTOP (>= 1024px)
+   ============================================================ */
+@media (min-width: 1024px) {
+    .desktop-hero-layout {
+        align-items: flex-start !important;
+        padding-top: 60px !important;
+    }
+    .desktop-left-col {
+        width: 55% !important;
+        padding-top: 0 !important;
+    }
+    .desktop-right-col {
+        width: 45% !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding-top: 40px !important;
+    }
+    .desktop-phone-mockup {
+        max-width: 380px !important;
+        min-height: 540px !important;
+        height: 100% !important;
+        max-height: 620px !important;
+    }
+    .badge-v2 {
+        display: inline-block !important;
+    }
+    .mobile-only-extras {
+        display: none !important;
+    }
+}
+
+/* ============================================================
+   TABLET (768px - 1023px)
+   The hero stacks in a single column below "lg". The fixed
+   100vh height that only makes sense for the desktop 55/45
+   split must be removed here, otherwise the stacked content
+   is cramped. The mobile trust line is shown to avoid the
+   431-768px gap.
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .desktop-hero-layout {
+        height: auto !important;
+        min-height: 0 !important;
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+    }
+    .mobile-only-extras {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 28px !important;
+        margin-bottom: 0 !important;
+    }
+    .mobile-mockup-wrapper {
+        padding-top: 3rem !important;
+        padding-bottom: 4rem !important;
+    }
+    .mobile-mockup-frame {
+        max-width: 360px !important;
+    }
+}
+
+/* ============================================================
+   MOBILE (<= 767px)
+   Covers the 431-767px gap AND the <=430px small phones.
+   ============================================================ */
+@media (max-width: 767px) {
+    /* Remove the fixed 100vh height and guard against any
+       horizontal scroll from the mockup / dialpad. */
+    .desktop-hero-layout {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .mobile-grid-override {
+        display: block !important;
+    }
+    .mobile-text-bounds {
+        min-height: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding-top: 0 !important;
+    }
+
+    /* Desktop-only badge hidden on Mobile */
+    .badge-v2 {
+        display: none !important;
+    }
+
+    /* Text Sizes & Exact Mobile Spacings */
+    .mobile-top-spacing {
+        margin-top: 24px !important;
+    }
+    .mobile-subheadline {
+        margin-bottom: 16px !important;
+    }
+
+    .mobile-headline {
+        font-size: 32px !important;
+        line-height: 1.12 !important;
+        margin-bottom: 20px !important;
+        max-width: 100% !important;
+    }
+    .mobile-body-copy {
+        margin-bottom: 32px !important;
+    }
+
+    .mobile-cta-stack {
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    .mobile-cta-btn {
+        font-size: 14px !important;
+    }
+
+    /* Feature Strip & Trust Line Styling (visible across all mobile widths) */
+    .mobile-only-extras {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 28px !important;
+        margin-bottom: 0 !important;
+    }
+    .mobile-feature-strip {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        font-size: 11px !important;
+        color: #a1a1aa !important;
+        font-weight: 400 !important;
+        flex-wrap: wrap !important;
+    }
+    .mobile-feature-sep {
+        font-size: 12px !important;
+        color: #52525b !important;
+    }
+    .mobile-trust-line {
+        font-size: 13px !important;
+        color: #e4e4e7 !important;
+        font-weight: 500 !important;
+        margin-top: 12px !important;
+        text-align: center !important;
+    }
+
+    /* Scroll Hint Position */
+    .mobile-scroll-hint-wrapper {
+        margin-top: auto !important;
+        margin-bottom: 24px !important;
+        padding-bottom: 0 !important;
+    }
+    .mobile-scroll-text {
+        font-size: 11px !important;
+    }
+
+    /* Mockup below fold */
+    .mobile-mockup-wrapper {
+        padding-top: 4rem !important;
+        padding-bottom: 5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    .mobile-mockup-frame {
+        width: 100% !important;
+        max-width: 360px !important;
+    }
+
+    /* Dialpad form: keep inside the viewport, no overflow */
+    .mobile-mockup-frame form,
+    .mobile-mockup-frame .flex.items-stretch {
+        min-width: 0 !important;
+    }
+    .mobile-mockup-frame input[type="tel"] {
+        min-width: 0 !important;
+    }
+}
+
+/* Very small phones (<= 360px): tighten CTA padding and
+   headline so nothing overflows the viewport. */
+@media (max-width: 360px) {
+    .mobile-cta-btn {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .mobile-headline {
+        font-size: 28px !important;
+    }
+}
+
+/* Light Mode Adaptive Styling for Mobile Extras */
+.light .mobile-trust-line {
+    color: #1f2937 !important;
+}
+.light .mobile-feature-strip {
+    color: #6b7280 !important;
+}
+.light .mobile-feature-sep {
+    color: #d1d5db !important;
+}

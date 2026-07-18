@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Voicerely Agents — AI Voice Employees</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,800;1,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Premium Design System Configuration Engine -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        'v-black': '#020205',
+                        'v-dark': '#0b0b10',     
+                        'v-border': '#151522',       
+                        'v-muted': '#a1a1aa',        
+                        'v-orange': '#f97316'        
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/agents.css">
+</head>
+<body class="bg-v-black text-v-muted font-sans antialiased relative overflow-x-hidden selection:bg-orange-500 selection:text-white [.light_&]:bg-white [.light_&]:text-gray-600 transition-colors duration-300">
+
+    <main class="w-full relative z-10 flex flex-col justify-between bg-grid-pattern">
+      
+      <!-- Section 1: Top Navigation Bar with Mobile Drawer Integration -->
+      <nav class="w-full bg-v-black/40 [.light_&]:bg-white/40 backdrop-blur-md border-b border-v-border/60 [.light_&]:border-gray-200 sticky top-0 z-50 shrink-0 h-[64px] md:h-20 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between w-full">
+          
+          <!-- Branding Logo -->
+          <a href="index.html" class="flex items-center shrink-0 outline-none">
+            <span class="font-sans font-extrabold text-base md:text-xl tracking-tight text-white [.light_&]:text-gray-900 flex items-center transition-colors">
+              VOICERELY<span class="bg-v-orange w-1.5 h-1.5 rounded-full ml-1.5 inline-block"></span>
+            </span>
+          </a>
+
+<!-- Desktop Navigation Links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="howitworks.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">How It Works</a>
+            <a href="voicerelyagents.html" class="font-sans text-xs font-semibold text-white [.light_&]:text-v-orange transition-colors">Voicerely Agents</a>
+            <a href="pricing.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Pricing</a>
+            <a href="faq.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">FAQ</a>
+          </div>
+
+          <!-- Actions Area -->
+          <div class="flex items-center gap-3 md:gap-4">
+            <!-- Theme Switcher Button -->
+            <button type="button" onclick="toggleTheme()" class="flex items-center justify-center w-11 h-11 rounded-full bg-v-dark border border-v-border [.light_&]:bg-gray-100 [.light_&]:border-gray-300 text-zinc-400 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-black transition-all outline-none" aria-label="Toggle Theme">
+              <svg class="w-4 h-4 block [.light_&]:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              <svg class="w-4 h-4 hidden [.light_&]:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+            
+            <button type="button" onclick="location.href='schedule.html'" class="font-sans text-[11px] font-bold tracking-[0.02em] px-4 py-2.5 md:px-5 md:py-3 rounded-full uppercase bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:brightness-110 transition-all shadow-lg shadow-orange-600/20 whitespace-nowrap">
+              Get Started
+            </button>
+
+            <!-- Hamburger Menu Trigger (Mobile) -->
+            <button type="button" onclick="toggleMobileMenu(true)" class="flex md:hidden items-center justify-center w-11 h-11 text-white [.light_&]:text-gray-900 outline-none" aria-label="Open Mobile Menu">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Slide-in Drawer Backdrop Menu Layer -->
+      <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+        <div id="mobileMenuPanel" class="absolute right-0 top-0 bottom-0 w-72 bg-v-dark [.light_&]:bg-white border-l border-v-border [.light_&]:border-gray-200 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out">
+          <div class="w-full flex flex-col">
+            <div class="w-full flex items-center justify-between mb-8">
+              <span class="font-sans font-black text-sm tracking-widest text-white [.light_&]:text-gray-900">NAVIGATION</span>
+              <button type="button" onclick="toggleMobileMenu(false)" class="w-11 h-11 flex items-center justify-center text-zinc-500 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-gray-900" aria-label="Close Drawer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+            </div>
+<div class="flex flex-col space-y-5">
+              <a href="howitworks.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">How It Works</a>
+              <a href="voicerelyagents.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-v-orange">Voicerely Agents</a>
+              <a href="pricing.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Pricing</a>
+              <a href="faq.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Hero Section -->
+      <section class="w-full flex items-center justify-center pt-20 pb-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <!-- Small Badge -->
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-v-orange/10 border border-v-orange/20 text-v-orange text-xs font-semibold tracking-wider uppercase mb-6">
+            VOICERELY AGENTS
+          </div>
+          
+          <!-- Main Heading -->
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white [.light_&]:text-gray-900 mb-6 tracking-tight leading-tight">
+            Your AI Voice Workforce
+          </h1>
+          
+          <!-- Subheading -->
+          <p class="text-base md:text-lg text-v-muted [.light_&]:text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Three specialized AI employees built to answer calls, generate revenue, and automate your business — 24/7, never sick, always on.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: AI Employee Cards -->
+      <section class="w-full pt-16 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1: Frontline -->
+            <div class="agent-card">
+              <div class="agent-card-badge">Frontline</div>
+              <div class="agent-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><path d="M4 14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2z"/><path d="M20 14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"/><path d="M18 17v1a3 3 0 0 1-3 3h-3"/></svg>
+              </div>
+              <h3 class="agent-card-name">Frontline</h3>
+              <p class="agent-card-tagline">Your 24/7 front desk</p>
+              <p class="agent-card-description">
+                Frontline answers every inbound call with human-like conversation, qualifies leads in real-time, and books appointments directly into your calendar.
+              </p>
+              <ul class="agent-card-features">
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Natural voice conversations</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Real-time lead qualification</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Calendar &amp; CRM synchronization</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Smart live transfer to human operators</li>
+                 <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Rescheduling &amp; cancellations</li>
+               </ul>
+              <div class="agent-card-actions">
+                <button type="button" class="agent-card-hear" onclick="playAgentSample('Frontline')">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Hear Frontline
+                </button>
+                <details class="agent-card-details">
+                  <summary class="agent-card-learnmore">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></summary>
+                  <p class="agent-card-detail">Frontline is your always-on receptionist. We train it on your scripts, FAQs, and booking flow, then connect it to your CRM and calendar so every inbound call is answered, qualified, and booked — without a human ever picking up.</p>
+                </details>
+              </div>
+            </div>
+
+            <!-- Card 2: Pipeline -->
+            <div class="agent-card">
+              <div class="agent-card-badge">Pipeline</div>
+              <div class="agent-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M13 7L9 13h4l-1 4 5-7h-4l1-3z" fill="currentColor" stroke="none"/></svg>
+              </div>
+              <h3 class="agent-card-name">Pipeline</h3>
+              <p class="agent-card-tagline">Your speed-to-lead engine</p>
+              <p class="agent-card-description">
+                Pipeline calls back every missed lead within seconds, follows up with persistence, and converts prospects while you sleep.
+              </p>
+              <ul class="agent-card-features">
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Instant speed-to-lead callback</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Persistent multi-touch follow-up</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Live CRM data injection</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Post-call SMS/Email updates</li>
+              </ul>
+              <div class="agent-card-actions">
+                <button type="button" class="agent-card-hear" onclick="playAgentSample('Pipeline')">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Hear Pipeline
+                </button>
+                <details class="agent-card-details">
+                  <summary class="agent-card-learnmore">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></summary>
+                  <p class="agent-card-detail">Pipeline is your speed-to-lead engine. It calls back every missed lead within seconds, runs persistent multi-touch follow-up, and scores opportunities so your team only spends time on deals that are ready to close.</p>
+                </details>
+              </div>
+            </div>
+
+            <!-- Card 3: Revive -->
+            <div class="agent-card">
+              <div class="agent-card-badge">REVIVE</div>
+              <div class="agent-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>
+              </div>
+              <h3 class="agent-card-name">Revive</h3>
+              <p class="agent-card-tagline">Your customer win-back engine</p>
+              <p class="agent-card-description">
+                Revive reaches out to past customers who've gone quiet, reminds them you're still here, and books them back in — turning dormant contacts into repeat revenue.
+              </p>
+              <ul class="agent-card-features">
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Automated win-back campaigns</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized re-engagement scripts</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dormant customer scoring</li>
+                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Repeat booking conversion</li>
+              </ul>
+              <div class="agent-card-actions">
+                <button type="button" class="agent-card-hear" onclick="playAgentSample('Revive')">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Hear Revive
+                </button>
+                <details class="agent-card-details">
+                  <summary class="agent-card-learnmore">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></summary>
+                  <p class="agent-card-detail">Revive is your customer win-back engine. It identifies past customers who've gone quiet, runs personalized re-engagement outreach, scores who's most likely to return, and books them back in — turning dormant contacts into repeat revenue.</p>
+                </details>
+              </div>
+            </div>
+
+           </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Integrations -->
+      <section id="integrations" class="w-full py-16 md:py-24 border-t border-v-border/20 [.light_&]:border-gray-200 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="text-center mb-10 md:mb-14">
+            <h2 class="text-[28px] md:text-[36px] font-extrabold text-white [.light_&]:text-gray-900 tracking-tight mb-3 font-sans">
+              INTEGRATIONS
+            </h2>
+            <p class="text-[15px] md:text-[18px] text-v-muted [.light_&]:text-gray-600 font-sans max-w-2xl mx-auto">
+              Works with the tools you already use.
+            </p>
+          </div>
+        </div>
+
+        <!-- Edge-fade mask for premium seamless marquee -->
+        <div class="marquee-container relative">
+          <div class="marquee-content" aria-label="Integrations">
+            <!-- Set 1 -->
+            <div class="flex items-center" aria-hidden="true">
+              <div class="integration-pill">
+                <img src="assets/logos/hubspot.svg" alt="HubSpot">
+                <span>HubSpot</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/salesforce.svg" alt="Salesforce">
+                <span>Salesforce</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/zoho.svg" alt="Zoho CRM">
+                <span>Zoho CRM</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/pipedrive.svg" alt="Pipedrive">
+                <span>Pipedrive</span>
+              </div>
+              <div class="integration-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>GoHighLevel</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/calendly.svg" alt="Calendly">
+                <span>Calendly</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/googlecalendar.svg" alt="Google Calendar">
+                <span>Google Calendar</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/outlook.svg" alt="Microsoft Outlook">
+                <span>Outlook</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/zapier.svg" alt="Zapier">
+                <span>Zapier</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/make.svg" alt="Make">
+                <span>Make</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/n8n.svg" alt="n8n">
+                <span>n8n</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/twilio.svg" alt="Twilio">
+                <span>Twilio</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/ringcentral.svg" alt="RingCentral">
+                <span>RingCentral</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/slack.svg" alt="Slack">
+                <span>Slack</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/teams.svg" alt="Microsoft Teams">
+                <span>Teams</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/notion.svg" alt="Notion">
+                <span>Notion</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/googlesheets.svg" alt="Google Sheets">
+                <span>Google Sheets</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/googledrive.svg" alt="Google Drive">
+                <span>Google Drive</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/gmail.svg" alt="Gmail">
+                <span>Gmail</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/claude.svg" alt="Claude">
+                <span>Claude</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/gemini.svg" alt="Gemini">
+                <span>Gemini</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/vapi.svg" alt="Vapi">
+                <span>Vapi</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/retellai.svg" alt="Retell AI">
+                <span>Retell AI</span>
+              </div>
+            </div>
+            <!-- Set 2 (duplicate for seamless infinite loop) -->
+            <div class="flex items-center" aria-hidden="true">
+              <div class="integration-pill">
+                <img src="assets/logos/hubspot.svg" alt="HubSpot">
+                <span>HubSpot</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/salesforce.svg" alt="Salesforce">
+                <span>Salesforce</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/zoho.svg" alt="Zoho CRM">
+                <span>Zoho CRM</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/pipedrive.svg" alt="Pipedrive">
+                <span>Pipedrive</span>
+              </div>
+              <div class="integration-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>GoHighLevel</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/calendly.svg" alt="Calendly">
+                <span>Calendly</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/googlecalendar.svg" alt="Google Calendar">
+                <span>Google Calendar</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/outlook.svg" alt="Microsoft Outlook">
+                <span>Outlook</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/zapier.svg" alt="Zapier">
+                <span>Zapier</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/make.svg" alt="Make">
+                <span>Make</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/n8n.svg" alt="n8n">
+                <span>n8n</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/twilio.svg" alt="Twilio">
+                <span>Twilio</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/ringcentral.svg" alt="RingCentral">
+                <span>RingCentral</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/slack.svg" alt="Slack">
+                <span>Slack</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/teams.svg" alt="Microsoft Teams">
+                <span>Teams</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/notion.svg" alt="Notion">
+                <span>Notion</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/googlesheets.svg" alt="Google Sheets">
+                <span>Google Sheets</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/googledrive.svg" alt="Google Drive">
+                <span>Google Drive</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/gmail.svg" alt="Gmail">
+                <span>Gmail</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/claude.svg" alt="Claude">
+                <span>Claude</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/gemini.svg" alt="Gemini">
+                <span>Gemini</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/vapi.svg" alt="Vapi">
+                <span>Vapi</span>
+              </div>
+              <div class="integration-pill">
+                <img src="assets/logos/retellai.svg" alt="Retell AI">
+                <span>Retell AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Text -->
+        <div class="text-center mt-12">
+          <p class="text-[15px] md:text-[16px] text-v-muted [.light_&]:text-gray-600 font-sans max-w-2xl mx-auto">
+            Need another integration? We can connect with virtually any modern platform using APIs, Webhooks, or Custom Integrations.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 6.5: Trust & Security -->
+      <section class="w-full py-16 md:py-24 border-t border-v-border/20 [.light_&]:border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="text-center mb-12 md:mb-16">
+            <div class="inline-flex items-center px-3 py-1 rounded-full bg-v-orange/10 border border-v-orange/20 text-v-orange text-xs font-semibold tracking-wider uppercase mb-6">
+              TRUST &amp; PRIVACY
+            </div>
+            <h2 class="text-[28px] md:text-[40px] font-extrabold text-white [.light_&]:text-gray-900 tracking-tight mb-3 font-sans">
+              Built for the Front Desk You Can Rely On
+            </h2>
+            <p class="text-[15px] md:text-[18px] text-v-muted [.light_&]:text-gray-600 font-sans max-w-2xl mx-auto">
+              From legal and medical client records to day-to-day appointment reliability, your calls and customer data stay protected by privacy-first safeguards and consistent, dependable coverage.
+            </p>
+          </div>
+
+          <div class="trust-matrix-grid">
+            <div class="trust-matrix-card">
+              <div class="trust-matrix-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
+              </div>
+              <div class="trust-matrix-metric">Ultra-Low Latency</div>
+              <h3 class="trust-matrix-title">Natural Conversations</h3>
+              <p class="trust-matrix-copy">Engineered for natural, human-like conversation response times so every caller feels heard.</p>
+            </div>
+
+            <div class="trust-matrix-card">
+              <div class="trust-matrix-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="trust-matrix-metric">Seamless Scalability</div>
+              <h3 class="trust-matrix-title">Smooth Under Load</h3>
+              <p class="trust-matrix-copy">Scales to handle high inbound traffic flows smoothly — your front desk never misses a beat during busy periods.</p>
+            </div>
+
+            <div class="trust-matrix-card">
+              <div class="trust-matrix-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8 3-8-3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <div class="trust-matrix-metric">SOC2-Aligned Security</div>
+              <h3 class="trust-matrix-title">Privacy-First Protection</h3>
+              <p class="trust-matrix-copy">Enterprise-grade encryption and secure data-handling practices aligned to SOC2 principles — built to safeguard sensitive legal and medical records.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 border-t border-v-border/20 [.light_&]:border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <a href="index.html" class="font-sans font-extrabold text-lg text-white [.light_&]:text-gray-900">
+              VOICERELY<span class="bg-v-orange w-1.5 h-1.5 rounded-full ml-1.5 inline-block"></span>
+            </a>
+            <p class="text-sm text-v-muted [.light_&]:text-gray-600 mt-2">Human-grade AI Voice Agents</p>
+          </div>
+<div class="flex flex-col md:flex-row items-center gap-6">
+            <a href="howitworks.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">How It Works</a>
+            <a href="voicerelyagents.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">Agents</a>
+            <a href="pricing.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">Pricing</a>
+            <a href="faq.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">FAQ</a>
+<a href="privacy.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">Privacy</a>
+             <a href="terms.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">Contact</a>
+          </div>
+        </div>
+        <div class="text-center mt-8 pt-6 border-t border-v-border/20 [.light_&]:border-gray-200">
+          <p class="text-xs text-v-muted [.light_&]:text-gray-500">© 2026 Voicerely. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>
+      // Lightweight "Hear [Agent]" sample player.
+      // Reuses the same pattern as the homepage hero demo. Drop real
+      // voice-sample files at assets/audio/<agent>.mp3 to replace the
+      // placeholder tone (the Audio() path below will then play them).
+      function playAgentSample(name) {
+        try {
+          var audio = new Audio('assets/audio/' + name.toLowerCase() + '.mp3');
+          audio.play().catch(function () {
+            // Fallback: short pleasant tone so the button is functional
+            // even before real voice samples are added.
+            var ctx = new (window.AudioContext || window.webkitAudioContext)();
+            var osc = ctx.createOscillator();
+            var gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = 440;
+            gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.15, ctx.currentTime + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.6);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 0.6);
+          });
+        } catch (e) {
+          /* no-op if audio is unavailable */
+        }
+      }
+    </script>
+  </body>
+</html>

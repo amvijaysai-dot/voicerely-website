@@ -1,0 +1,4 @@
+/* Button styles - only contains styles that need to be extracted from inline CSS */
+
+/* Note: Most button styling is handled by Tailwind utility classes in the HTML.
+   This file is kept for future button-specific styles that cannot be achieved with Tailwind. */

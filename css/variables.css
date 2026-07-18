@@ -1,0 +1,40 @@
+/* CSS Variables - colors, fonts, transitions */
+
+:root {
+    /* Colors */
+    --v-black: #020205;
+    --v-dark: #0b0b10;
+    --v-border: #151522;
+    --v-muted: #a1a1aa;
+    --v-orange: #f97316;
+    --v-blue: #4361ee;
+    --v-orange2: #ff6b35;
+    --v-teal: #06d6a0;
+    --v-crimson: #ef4444;
+    --v-purple: #8b5cf6;
+    
+    /* Fonts */
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Transitions */
+    --transition-colors: color 0.3s, background-color 0.3s;
+    --transition-all: all 0.3s;
+}
+
+/* Light mode variables */
+.light {
+    --v-black: #ffffff;
+    --v-dark: #f3f4f6;
+    --v-border: #d1d5db;
+    --v-muted: #6b7280;
+}
+
+/* Base transition styles */
+.transition-colors {
+    transition: var(--transition-colors);
+}
+
+.transition-all {
+    transition: var(--transition-all);
+}

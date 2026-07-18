@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FAQ — Voicerely</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,800;1,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Premium Design System Configuration Engine -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        'v-black': '#020205',
+                        'v-dark': '#0b0b10',     
+                        'v-border': '#151522',       
+                        'v-muted': '#a1a1aa',        
+                        'v-orange': '#f97316'        
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/faq.css">
+</head>
+<body class="bg-v-black text-v-muted font-sans antialiased relative overflow-x-hidden selection:bg-orange-500 selection:text-white [.light_&]:bg-white [.light_&]:text-gray-600 transition-colors duration-300">
+
+    <main class="w-full relative z-10 flex flex-col justify-between bg-grid-pattern">
+      
+      <!-- Section 1: Top Navigation Bar with Mobile Drawer Integration -->
+      <nav class="w-full bg-v-black/40 [.light_&]:bg-white/40 backdrop-blur-md border-b border-v-border/60 [.light_&]:border-gray-200 sticky top-0 z-50 shrink-0 h-[64px] md:h-20 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between w-full">
+          
+          <!-- Branding Logo -->
+          <a href="index.html" class="flex items-center shrink-0 outline-none">
+            <span class="font-sans font-extrabold text-base md:text-xl tracking-tight text-white [.light_&]:text-gray-900 flex items-center transition-colors">
+              VOICERELY<span class="bg-v-orange w-1.5 h-1.5 rounded-full ml-1.5 inline-block"></span>
+            </span>
+          </a>
+
+<!-- Desktop Navigation Links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="howitworks.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">How It Works</a>
+            <a href="voicerelyagents.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Voicerely Agents</a>
+            <a href="pricing.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Pricing</a>
+            <a href="faq.html" class="font-sans text-xs font-semibold text-white [.light_&]:text-v-orange transition-colors">FAQ</a>
+          </div>
+
+          <!-- Actions Area -->
+          <div class="flex items-center gap-3 md:gap-4">
+            <!-- Theme Switcher Button -->
+            <button type="button" onclick="toggleTheme()" class="flex items-center justify-center w-11 h-11 rounded-full bg-v-dark border border-v-border [.light_&]:bg-gray-100 [.light_&]:border-gray-300 text-zinc-400 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-black transition-all outline-none" aria-label="Toggle Theme">
+              <svg class="w-4 h-4 block [.light_&]:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              <svg class="w-4 h-4 hidden [.light_&]:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+            
+<button type="button" onclick="location.href='schedule.html'" class="font-sans text-[11px] font-bold tracking-[0.02em] px-4 py-2.5 md:px-5 md:py-3 rounded-full uppercase bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:brightness-110 transition-all shadow-lg shadow-orange-600/20 whitespace-nowrap">
+               Get Started
+            </button>
+
+            <!-- Hamburger Menu Trigger (Mobile) -->
+            <button type="button" onclick="toggleMobileMenu(true)" class="flex md:hidden items-center justify-center w-11 h-11 text-white [.light_&]:text-gray-900 outline-none" aria-label="Open Mobile Menu">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Slide-in Drawer Backdrop Menu Layer -->
+      <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+        <div id="mobileMenuPanel" class="absolute right-0 top-0 bottom-0 w-72 bg-v-dark [.light_&]:bg-white border-l border-v-border [.light_&]:border-gray-200 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out">
+          <div class="w-full flex flex-col">
+            <div class="w-full flex items-center justify-between mb-8">
+              <span class="font-sans font-black text-sm tracking-widest text-white [.light_&]:text-gray-900">NAVIGATION</span>
+              <button type="button" onclick="toggleMobileMenu(false)" class="w-11 h-11 flex items-center justify-center text-zinc-500 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-gray-900" aria-label="Close Drawer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+            </div>
+<div class="flex flex-col space-y-5">
+              <a href="howitworks.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">How It Works</a>
+              <a href="voicerelyagents.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Voicerely Agents</a>
+              <a href="pricing.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Pricing</a>
+              <a href="faq.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-v-orange">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Hero Section -->
+      <section class="w-full flex items-center justify-center pt-20 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <!-- Small Badge -->
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-v-orange/10 border border-v-orange/20 text-v-orange text-xs font-semibold tracking-wider uppercase mb-6">
+            FAQ
+          </div>
+          
+          <!-- Main Heading -->
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white [.light_&]:text-gray-900 mb-6 tracking-tight leading-tight">
+            Frequently Asked Questions
+          </h1>
+          
+          <!-- Subheading -->
+          <p class="text-base md:text-lg text-v-muted [.light_&]:text-gray-600 mb-4 max-w-2xl mx-auto leading-relaxed">
+            Everything you need to know about Voicerely.
+          </p>
+          
+          <p class="text-base md:text-lg text-v-muted [.light_&]:text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Need more help? Book a strategy call and we'll walk you through everything.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: FAQ Accordion -->
+      <section class="w-full pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+          
+          <!-- Pricing & Cost Category -->
+          <div class="faq-category">
+            <h2 class="faq-category-title">PRICING & COST</h2>
+            
+            <div class="faq-item">
+              <div class="faq-q" data-faq="1" aria-expanded="false">
+                <span class="faq-question">Is there a setup fee?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">Yes, a one-time onboarding fee applies based on your requirements — number of CRM integrations, custom call flows, and voice training. We discuss this during your trial setup so there are no surprises.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" data-faq="2" aria-expanded="false">
+                <span class="faq-question">What happens if I exceed my minutes?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">Base plan charges $0.25/min, Starter charges $0.20/min. Growth and Enterprise include unlimited usage. We'll notify you before you reach your limits.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" data-faq="3" aria-expanded="false">
+                <span class="faq-question">Can I upgrade or downgrade anytime?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">Upgrade immediately anytime. Downgrades apply on your next billing cycle.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- How It Works Category -->
+          <div class="faq-category">
+            <h2 class="faq-category-title">HOW IT WORKS</h2>
+            
+            <div class="faq-item">
+              <div class="faq-q" data-faq="4" aria-expanded="false">
+                <span class="faq-question">How does the AI sound human?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">We use advanced voice AI with natural language understanding. It adapts tone, pacing and conversation style dynamically, making conversations feel natural and human.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" data-faq="5" aria-expanded="false">
+                <span class="faq-question">What happens if the AI cannot answer?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">It instantly escalates using whichever method you configure:
+• Human transfer
+• SMS notification
+• Callback scheduling</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" data-faq="6" aria-expanded="false">
+                <span class="faq-question">How long does setup take?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">Typical onboarding takes 5–7 business days including voice configuration, CRM integration, workflow setup and testing.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integrations Category -->
+          <div class="faq-category">
+            <h2 class="faq-category-title">INTEGRATIONS</h2>
+            
+            <div class="faq-item">
+              <div class="faq-q" data-faq="7" aria-expanded="false">
+                <span class="faq-question">Which CRMs are supported?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">HubSpot, Salesforce, GoHighLevel, Zoho, Calendly, Pipedrive, and 20+ more via API and Zapier.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" data-faq="8" aria-expanded="false">
+                <span class="faq-question">Do I need to change my phone number?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">No. Simply forward your existing number to Voicerely or let us provision a dedicated number.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Category -->
+          <div class="faq-category">
+            <h2 class="faq-category-title">SECURITY</h2>
+            
+            <div class="faq-item">
+              <div class="faq-q" data-faq="9" aria-expanded="false">
+                <span class="faq-question">What happens if the system goes down?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">Growth and Enterprise include 99.9% uptime with automatic failover to your backup destination.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" data-faq="10" aria-expanded="false">
+                <span class="faq-question">Is my data secure?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">Enterprise includes SOC 2, GDPR and HIPAA compliance. Calls remain encrypted and are never used for third-party AI training.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROI Category -->
+          <div class="faq-category">
+            <h2 class="faq-category-title">ROI</h2>
+            
+            <div class="faq-item">
+              <div class="faq-q" data-faq="11" aria-expanded="false">
+                <span class="faq-question">How quickly will I see results?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">Most businesses recover missed opportunities within the first two weeks. Recovering just a couple of missed leads often pays for the entire service.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" data-faq="12" aria-expanded="false">
+                <span class="faq-question">Can I try before purchasing?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a" aria-hidden="true">
+                <div class="faq-a-inner">Absolutely. Use our Demo Agent to receive an AI phone call instantly or schedule a live strategy session.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Bottom CTA -->
+      <section class="w-full pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+          <div class="bottom-cta">
+            <h2 class="bottom-cta-heading">Still have questions?</h2>
+            <p class="bottom-cta-subheading">We're happy to walk you through everything during a free strategy session.</p>
+<div class="bottom-cta-buttons">
+               <a href="schedule.html" class="cta-primary">Book a 15-Minute Call</a>
+               <a href="#" onclick="togglePhoneScreen('dialpad'); return false;" class="cta-secondary">Call the Demo Agent</a>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="w-full py-12 border-t border-v-border/20 [.light_&]:border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+              <a href="index.html" class="font-sans font-extrabold text-lg text-white [.light_&]:text-gray-900">
+                VOICERELY<span class="bg-v-orange w-1.5 h-1.5 rounded-full ml-1.5 inline-block"></span>
+              </a>
+              <p class="text-sm text-v-muted [.light_&]:text-gray-600 mt-2">Human-grade AI Voice Agents</p>
+            </div>
+<div class="flex flex-col md:flex-row items-center gap-6">
+            <a href="howitworks.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">How It Works</a>
+            <a href="voicerelyagents.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">Agents</a>
+            <a href="pricing.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">Pricing</a>
+            <a href="faq.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">FAQ</a>
+<a href="privacy.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">Privacy</a>
+               <a href="terms.html" class="font-sans text-sm text-zinc-400 [.light_&]:text-gray-500 hover:text-v-orange [.light_&]:hover:text-v-orange transition-colors">Contact</a>
+            </div>
+          </div>
+          <div class="text-center mt-8 pt-6 border-t border-v-border/20 [.light_&]:border-gray-200">
+            <p class="text-xs text-v-muted [.light_&]:text-gray-500">© 2026 Voicerely. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/faq.js"></script>
+</body>
+</html>
