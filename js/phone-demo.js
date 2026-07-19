@@ -58,12 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initPhoneStatusRotator();
 });
 
-// New isolated status rotator for the phone mockup status indicator
+// Status rotator for the phone mockup status indicator
 function initPhoneStatusRotator() {
     const items = document.querySelectorAll('.status-rotator .status-item');
     if (!items.length) return;
-    let current = 0;
+    
+    // Respect reduced motion preference
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    
+    let current = 0;
     setInterval(() => {
         items[current].classList.remove('active');
         current = (current + 1) % items.length;
@@ -217,61 +220,3 @@ window.submitPhoneNumber = submitPhoneNumber;
 window.resetDemo = resetDemo;
 window.togglePhoneScreen = togglePhoneScreen;
 window.simulateDialPipeline = simulateDialPipeline;
-
-// ============================================================
-// Status Rotator - Rotating Status Indicator
-// ============================================================
-
-// Status rotator states
-const STATUS_STATES = [
-    { key: 'answering', text: 'Answering calls' },
-    { key: 'booking', text: 'Booking appointments' },
-    { key: 'qualifying', text: 'Qualifying leads' },
-    { key: 'available', text: 'Available 24/7' }
-];
-
-let currentStatusIndex = 0;
-let statusRotatorInterval = null;
-
-// Check if reduced motion is preferred
-function prefersReducedMotion() {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
-
-// Initialize status rotator
-function initStatusRotator() {
-    // If reduced motion is preferred, show static "Available 24/7" state
-    if (prefersReducedMotion()) {
-        const statusItems = document.querySelectorAll('.status-item');
-        statusItems.forEach(item => item.classList.remove('active'));
-        const availableItem = document.querySelector('.status-item[data-status="available"]');
-        if (availableItem) {
-            availableItem.classList.add('active');
-        }
-        return;
-    }
-
-    // Start rotation
-    statusRotatorInterval = setInterval(rotateStatus, 2400); // 2s visible + 400ms transition
-}
-
-// Rotate to next status
-function rotateStatus() {
-    const statusItems = document.querySelectorAll('.status-item');
-    
-    // Remove active class from current
-    statusItems[currentStatusIndex].classList.remove('active');
-    
-    // Move to next
-    currentStatusIndex = (currentStatusIndex + 1) % STATUS_STATES.length;
-    
-    // Add active class to next
-    statusItems[currentStatusIndex].classList.add('active');
-}
-
-// Clean up on page unload
-window.addEventListener('beforeunload', () => {
-    if (statusRotatorInterval) {
-        clearInterval(statusRotatorInterval);
-    }
-});
