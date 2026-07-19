@@ -6,7 +6,7 @@
 @media (min-width: 1024px) {
     .desktop-hero-layout {
         align-items: flex-start !important;
-        padding-top: 60px !important;
+        padding-top: 80px !important; /* Increased padding for better vertical balance */
     }
     .desktop-left-col {
         width: 55% !important;
@@ -19,13 +19,20 @@
         padding-top: 40px !important;
     }
     .desktop-phone-mockup {
-        max-width: 380px !important;
-        min-height: 540px !important;
+        max-width: 440px !important; /* Increased phone size by ~10% */
+        min-height: 616px !important;
         height: 100% !important;
-        max-height: 620px !important;
+        max-height: 704px !important;
+        box-shadow:
+            0 0 60px 15px rgba(249, 115, 22, 0.6), /* Stronger orange glow */
+            0 20px 40px rgba(0, 0, 0, 0.6); /* Deeper shadow for depth */
+        border-radius: 48px !important; /* Slightly larger radius for premium feel */
+        transition: box-shadow 0.3s ease;
     }
     .badge-v2 {
         display: inline-block !important;
+        box-shadow: 0 0 12px 3px rgba(249, 115, 22, 0.5); /* Glow around badge */
+        animation: pulse-element 2s ease-in-out infinite;
     }
     .mobile-only-extras {
         display: none !important;

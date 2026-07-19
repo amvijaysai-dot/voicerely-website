@@ -1,10 +1,68 @@
 /* Animation keyframes and utility classes */
 
+/* Equalizer bar animations */
+@keyframes equalizer-1 {
+    0%, 100% { height: 0.75rem; }
+    25% { height: 0.5rem; }
+    50% { height: 1rem; }
+    75% { height: 0.6rem; }
+}
+@keyframes equalizer-2 {
+    0%, 100% { height: 1rem; }
+    25% { height: 0.75rem; }
+    50% { height: 1.25rem; }
+    75% { height: 0.8rem; }
+}
+@keyframes equalizer-3 {
+    0%, 100% { height: 0.625rem; }
+    25% { height: 0.4rem; }
+    50% { height: 1rem; }
+    75% { height: 0.5rem; }
+}
+@keyframes equalizer-4 {
+    0%, 100% { height: 0.875rem; }
+    25% { height: 0.6rem; }
+    50% { height: 1.125rem; }
+    75% { height: 0.7rem; }
+}
+@keyframes equalizer-5 {
+    0%, 100% { height: 0.5rem; }
+    25% { height: 0.3rem; }
+    50% { height: 0.875rem; }
+    75% { height: 0.4rem; }
+}
+@keyframes equalizer-6 {
+    0%, 100% { height: 1rem; }
+    25% { height: 0.6rem; }
+    50% { height: 1.25rem; }
+    75% { height: 0.7rem; }
+}
+@keyframes equalizer-7 {
+    0%, 100% { height: 0.625rem; }
+    25% { height: 0.4rem; }
+    50% { height: 1rem; }
+    75% { height: 0.5rem; }
+}
+@keyframes equalizer-8 {
+    0%, 100% { height: 0.75rem; }
+    25% { height: 0.5rem; }
+    50% { height: 1rem; }
+    75% { height: 0.6rem; }
+}
+.animate-equalizer-1 { animation: equalizer-1 1.2s ease-in-out infinite; }
+.animate-equalizer-2 { animation: equalizer-2 1.4s ease-in-out infinite; }
+.animate-equalizer-3 { animation: equalizer-3 1.1s ease-in-out infinite; }
+.animate-equalizer-4 { animation: equalizer-4 1.3s ease-in-out infinite; }
+.animate-equalizer-5 { animation: equalizer-5 1.2s ease-in-out infinite; }
+.animate-equalizer-6 { animation: equalizer-6 1.5s ease-in-out infinite; }
+.animate-equalizer-7 { animation: equalizer-7 1.1s ease-in-out infinite; }
+.animate-equalizer-8 { animation: equalizer-8 1.3s ease-in-out infinite; }
+
 /* Avatar pulse animation */
 @keyframes avatar-pulse {
     0% { transform: scale(0.95); opacity: 1; }
-    50% { transform: scale(1.08); opacity: 0.4; }
-    100% { transform: scale(1.2); opacity: 0; }
+    50% { transform: scale(1.15); opacity: 0.5; }
+    100% { transform: scale(1.3); opacity: 0; }
 }
 
 /* Fade in up animation for pricing cards */
@@ -23,7 +81,76 @@
 
 /* Pulse element animation class */
 .pulse-element { 
-    animation: avatar-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; 
+    animation: avatar-pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite; 
+}
+
+/* Enhanced orange glow for phone edges and floating icons */
+.phone-glow-pulse {
+    animation: avatar-pulse 2.5s ease-in-out infinite;
+    box-shadow: 0 0 20px 6px rgba(249, 115, 22, 0.6);
+}
+
+/* Mesh gradient background enhancements */
+.bg-gradient-to-br {
+    background-image: radial-gradient(circle at 25% 25%, rgba(249, 115, 22, 0.1), transparent 70%), 
+                      radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.05), transparent 70%);
+    animation: mesh-wave 15s linear infinite;
+}
+
+/* Orange mesh wave background animation */
+@keyframes mesh-wave {
+    0% {
+        background-position: 0% 0%, 100% 100%;
+    }
+    50% {
+        background-position: 50% 50%, 50% 50%;
+    }
+    100% {
+        background-position: 0% 0%, 100% 100%;
+    }
+}
+
+/* Connecting dotted lines for floating icons */
+.floating-line {
+    position: absolute;
+    border: 1px dotted rgba(249, 115, 22, 0.7);
+    border-radius: 50%;
+    animation: pulse-line 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 20;
+    filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.7));
+}
+
+/* Subtle floating particles */
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(249, 115, 22, 0.4);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.6));
+    animation: particle-float 12s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes pulse-line {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.3;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -45,7 +172,7 @@
                       linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
 }
 
-/* Waveform bar animation */
+/* Waveform bar animation - DEPRECATED, kept for backward compatibility */
 .waveform-bar {
     transform-origin: bottom;
     animation: waveform-oscillate 1.2s ease-in-out infinite;
@@ -58,148 +185,884 @@
     }
 }
 
-/* Scroll hint bounce animation */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+/* ========================================
+   PREMIUM VOICE RING ANIMATION
+   ======================================== */
+
+/* Voice ring container - positioned around avatar */
+.voice-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 5;
 }
 
-.scroll-hint-arrow { 
-    animation: bounce 1.5s infinite ease-in-out; 
+/* The animated ring */
+.voice-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2.5px solid rgba(249, 115, 22, 0.35);
+    box-shadow: 
+        0 0 8px rgba(249, 115, 22, 0.25),
+        0 0 16px rgba(249, 115, 22, 0.15),
+        inset 0 0 8px rgba(249, 115, 22, 0.1);
+    animation: voice-ring-breathe 4s ease-in-out infinite;
+    opacity: 0.35;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .scroll-hint-arrow {
-        animation: none;
+/* Breathing animation - subtle expand/contract with opacity pulse */
+@keyframes voice-ring-breathe {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.35;
+        box-shadow: 
+            0 0 8px rgba(249, 115, 22, 0.25),
+            0 0 16px rgba(249, 115, 22, 0.15),
+            inset 0 0 8px rgba(249, 115, 22, 0.1);
+    }
+    50% {
+        transform: scale(1.04);
+        opacity: 0.7;
+        box-shadow: 
+            0 0 12px rgba(249, 115, 22, 0.4),
+            0 0 24px rgba(249, 115, 22, 0.25),
+            inset 0 0 12px rgba(249, 115, 22, 0.15);
     }
 }
 
-/* Marquee animation for industry pills */
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+@media (prefers-reduced-motion: reduce) {
+    .voice-ring::before {
+        animation: none;
+        transform: scale(1);
+        opacity: 0.5;
+    }
 }
 
-.marquee-container {
-    overflow: hidden;
-    width: 100%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+/* Improved online indicator pulse */
+.online-indicator {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 10px;
+    height: 10px;
+    background: #10b981;
+    border: 2px solid #020205;
+    border-radius: 50%;
+    z-index: 10;
+    animation: online-pulse 2s ease-in-out infinite;
 }
 
-.marquee-content {
+@keyframes online-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
+        transform: scale(1.05);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .online-indicator {
+        animation: none;
+        box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+    }
+}
+
+/* Optional: Subtle glass reflection sweep across screen */
+@keyframes glass-sweep {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(-15deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.03;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+.glass-sweep {
+    position: absolute;
+    inset: -50%;
+    background: linear-gradient(115deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.015) 48%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0.015) 52%,
+        transparent 60%
+    );
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 15;
+    animation: glass-sweep 12s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glass-sweep {
+        animation: none;
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   HOMEPAGE PHONE - LIVE AI RECEPTIONIST
+   ======================================== */
+
+/* ========================================
+   PREMIUM HORIZONTAL WAVEFORM
+   ======================================== */
+
+.waveform-container {
+    width: 60%;
+    max-width: 180px;
+    height: 32px;
     display: flex;
-    animation: marquee 30s linear infinite;
-    will-change: transform;
+    align-items: center;
+    justify-content: center;
+}
+
+.waveform-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.waveform-path {
+    fill: none;
+    stroke: #F97316;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.35)) drop-shadow(0 0 16px rgba(249, 115, 22, 0.2));
+    animation: waveform-morph 1.8s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.waveform-glow {
+    fill: none;
+    stroke: #FDBA74;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 6px rgba(253, 186, 116, 0.5));
+    animation: waveform-morph 1.8s ease-in-out infinite;
+    transform-origin: center;
+    animation-delay: 0.05s;
+}
+
+/* Morphing animation between 4 waveform shapes */
+@keyframes waveform-morph {
+    0%, 100% {
+        d: path("M10,16 C25,16 35,16 50,16 C65,16 75,16 90,16 C105,16 115,16 130,16 C145,16 155,16 170,16 C185,16 195,16 210,16 C225,16 235,16 250,16 C265,16 275,16 290,16");
+    }
+    25% {
+        d: path("M10,16 C25,14 35,12 50,10 C65,8 75,6 90,8 C105,10 115,14 130,16 C145,18 155,20 170,18 C185,16 195,14 210,16 C225,18 235,20 250,16 C265,12 275,10 290,16");
+    }
+    50% {
+        d: path("M10,16 C25,18 35,20 50,22 C65,24 75,26 90,24 C105,22 115,20 130,16 C145,12 155,10 170,12 C185,14 195,18 210,16 C225,10 235,8 250,16 C265,20 275,22 290,16");
+    }
+    75% {
+        d: path("M10,16 C25,14 35,12 50,14 C65,16 75,18 90,16 C105,14 115,12 130,16 C145,18 155,20 170,18 C185,16 195,14 210,16 C225,18 235,20 250,16 C265,12 275,10 290,16");
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .marquee-content {
+    .waveform-path,
+    .waveform-glow {
         animation: none;
-        will-change: auto;
     }
 }
 
-.marquee-content:hover {
-    animation-play-state: paused;
-}
-
-@media (max-width: 768px) {
-    .marquee-content {
-        animation-duration: 45s;
-    }
-}
-
-.industry-pill {
-    display: inline-flex;
+/* State container for waveform */
+.state-container {
+    width: 100%;
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    margin: 0.25rem;
+    justify-content: center;
+}
+
+/* Enhanced avatar breathing halo */
+@keyframes avatar-halo-breathe {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.08;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.18;
+    }
+}
+
+.avatar-halo {
+    position: absolute;
+    inset: -16px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.25) 0%, rgba(249, 115, 22, 0.08) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: avatar-halo-breathe 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .avatar-halo {
+        animation: none;
+        opacity: 0.12;
+    }
+}
+
+/* Online indicator enhanced */
+.online-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    background: #10b981;
+    border: 3px solid #020205;
+    border-radius: 50%;
+    z-index: 10;
+    animation: online-pulse 2.5s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+}
+
+@keyframes online-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+        transform: scale(1.08);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .online-indicator {
+        animation: none;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+    }
+}
+
+/* Phone floating animation - disabled to keep phone fixed */
+.animate-phone-float {
+    /* Phone remains static */
+}
+
+/* Floating animation for glass cards - disabled to keep cards fixed */
+.animate-float-slow,
+.animate-float-delayed,
+.animate-float {
+    /* Cards remain static */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-phone-float,
+    .animate-float-slow,
+    .animate-float-delayed,
+    .animate-float {
+        animation: none;
+    }
+}
+
+/* Premium Phone Mockup - Hardware Realism */
+.phone-mockup-container {
+    /* Remove cursor pointer - only CTA button is clickable */
+    transition: box-shadow 0.3s ease;
+    /* Premium smartphone proportions */
+    border-radius: 2.5rem;
+    /* Metal frame effect */
+    background: linear-gradient(145deg, #1a1a2e 0%, #0b0b10 100%);
+    /* Subtle edge highlight */
+    box-shadow: 
+        /* Contact shadow */
+        0 10px 40px rgba(0, 0, 0, 0.35),
+        /* Ambient shadow */
+        0 25px 60px rgba(0, 0, 0, 0.25),
+        /* Subtle orange glow */
+        0 0 0 1px rgba(249, 115, 22, 0.08),
+        /* Additional layered shadows for depth */
+        0 0 20px 8px rgba(249, 115, 22, 0.3),
+        inset 0 0 30px rgba(255, 140, 0, 0.15);
+    /* Added deeper inset shadows for more depth */
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.35),
+        0 25px 60px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(249, 115, 22, 0.08),
+        0 0 20px 8px rgba(249, 115, 22, 0.3),
+        inset 0 0 30px rgba(255, 140, 0, 0.15),
+        inset 0 0 40px rgba(255, 140, 0, 0.25),
+        inset 0 0 60px rgba(255, 140, 0, 0.2);
+}
+
+/* Improved lighting around phone edges */
+.phone-mockup-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 44px;
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.12) 0%,   /* Top highlight */
+        rgba(255, 255, 255, 0.04) 20%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.3) 80%,
+        rgba(255, 255, 255, 0.08) 100%  /* Bottom highlight */
+    );
+    pointer-events: none;
+    z-index: 10;
+    /* Frame edge highlight - simulates machined metal edge */
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+        inset 1px 0 0 rgba(255, 255, 255, 0.12),
+        inset -1px 0 0 rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(255, 140, 0, 0.3);
+}
+
+/* Enhanced glass layer for lighting */
+.phone-mockup-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 44px;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.06) 0%,
+        rgba(255, 255, 255, 0.02) 15%,
+        transparent 30%,
+        transparent 70%,
+        rgba(0, 0, 0, 0.04) 85%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    pointer-events: none;
+    z-index: 11;
+}
+
+/* Dynamic Island - centered top cutout */
+.dynamic-island {
+    position: absolute;
+    top: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4.5rem;
+    height: 1.25rem;
+    background: #000;
     border-radius: 9999px;
-    border: 1px solid rgba(21, 21, 34, 0.4);
-    background-color: rgba(11, 11, 16, 0.4);
-    backdrop-filter: blur(8px);
-    transition: all 0.3s ease;
-    flex-shrink: 0;
+    z-index: 10;
+    /* Subtle highlight */
+    box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
 }
 
-.light .industry-pill {
-    background-color: rgba(243, 244, 246, 0.6);
-    border-color: rgba(209, 211, 215, 0.6);
+/* Screen recess - creates depth */
+.phone-screen {
+    position: absolute;
+    inset: 0.25rem;
+    border-radius: 2.25rem;
+    background: #000;
+    overflow: hidden;
+    /* Screen appears slightly recessed */
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
-.industry-pill:hover {
-    border-color: rgba(249, 115, 22, 0.5);
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
-    transform: translateY(-2px);
+/* Subtle glass reflections - very soft */
+.phone-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+    border-radius: 2.5rem 2.5rem 0 0;
+    pointer-events: none;
+    z-index: 5;
 }
 
-.industry-pill svg {
-    width: 1rem;
-    height: 1rem;
-    color: #a1a1aa;
-    transition: color 0.3s ease;
+/* Demo states - all stack on top of each other inside the phone */
+.demo-state {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.industry-pill:hover svg {
+.demo-state.hidden {
+    display: none;
+}
+
+/* Unified screen system for PhoneController */
+.demo-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: blur(2px);
+    transition: opacity 250ms ease, transform 250ms ease, filter 250ms ease;
+    pointer-events: none;
+}
+
+.demo-screen.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    pointer-events: auto;
+}
+
+/* Status overlays (temporary) */
+.demo-status {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: blur(2px);
+    transition: opacity 250ms ease, transform 250ms ease, filter 250ms ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.demo-status.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    pointer-events: auto;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .demo-screen,
+    .demo-status {
+        transition: none;
+    }
+}
+
+/* ========================================
+   PREMIUM PHONE MOCKUP STYLES
+   ======================================== */
+
+/* Phone container - premium hardware mockup */
+.phone-mockup-container {
+    position: relative;
+    width: 320px;
+    height: 640px;
+    /* Premium smartphone proportions: ~19.5:9 aspect ratio */
+    /* iPhone 15 Pro: 146.6 x 70.6mm = ~2.07 ratio, but we use slightly taller for demo content */
+    border-radius: 44px; /* Premium smartphone corner radius - continuous curvature feel */
+    background: linear-gradient(145deg, #1a1a2e 0%, #0f0f1a 50%, #0a0a12 100%);
+    box-shadow: 
+        /* Contact shadow - tight to device */
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        /* Ambient shadow - wider, softer */
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        0 24px 64px rgba(0, 0, 0, 0.3),
+        /* Subtle orange brand glow - very subtle */
+        0 0 0 1px rgba(249, 115, 22, 0.08),
+        0 0 40px rgba(249, 115, 22, 0.06),
+        0 0 80px rgba(249, 115, 22, 0.03);
+    overflow: hidden;
+    /* Subtle floating animation */
+    animation: phone-float 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Subtle floating animation - barely noticeable */
+@keyframes phone-float {
+    0%, 100% { transform: translateY(0) rotateX(0.5deg) rotateY(-0.5deg); }
+    50% { transform: translateY(-2.5px) rotateX(0.3deg) rotateY(-0.3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .phone-mockup-container {
+        animation: none;
+        transform: none;
+    }
+}
+
+/* Metal frame - the premium metal band around the phone */
+.phone-mockup-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 44px;
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.08) 0%,   /* Top highlight */
+        rgba(255, 255, 255, 0.02) 20%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.2) 80%,
+        rgba(255, 255, 255, 0.04) 100%  /* Bottom highlight */
+    );
+    pointer-events: none;
+    z-index: 10;
+    /* Frame edge highlight - simulates machined metal edge */
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+        inset 1px 0 0 rgba(255, 255, 255, 0.08),
+        inset -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Glass layer - subtle glass reflection overlay */
+.phone-mockup-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 44px;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.01) 15%,
+        transparent 30%,
+        transparent 70%,
+        rgba(0, 0, 0, 0.02) 85%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+    pointer-events: none;
+    z-index: 11;
+}
+
+/* Dynamic Island - premium, minimal, centered */
+.dynamic-island {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 126px;
+    height: 30px;
+    background: #000;
+    border-radius: 15px;
+    z-index: 20;
+    pointer-events: none;
+    /* Subtle depth - sits slightly above screen */
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    /* Glass-like material */
+    background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+}
+
+/* Dynamic Island inner cutout effect */
+.dynamic-island::before {
+    content: '';
+    position: absolute;
+    inset: 1.5px;
+    border-radius: 13.5px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Screen recess - the display area recessed inside the frame */
+.phone-screen {
+    position: absolute;
+    inset: 42px 10px 10px 10px; /* Top: Dynamic Island + gap, Sides: thin bezel, Bottom: thin chin */
+    border-radius: 30px; /* Slightly smaller radius for recessed screen */
+    background: #020205; /* v-black - deep OLED black */
+    overflow: hidden;
+    z-index: 5;
+    /* Screen recess depth effect */
+    box-shadow: 
+        inset 0 2px 8px rgba(0, 0, 0, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.02),
+        /* Subtle inner glow at top edge */
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Screen content area - where demo screens live */
+.phone-screen > .demo-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px 20px 20px; /* Increased breathing room */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Glass reflection overlay on screen */
+.phone-screen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.02) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.03) 100%
+    );
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Subtle diagonal reflection - premium glass feel */
+.phone-screen::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(115deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.015) 48%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0.015) 52%,
+        transparent 60%
+    );
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 11;
+    opacity: 0.6;
+    animation: glass-sheen 8s ease-in-out infinite;
+}
+
+@keyframes glass-sheen {
+    0%, 100% { transform: translateX(-100%) rotate(-15deg); opacity: 0; }
+    10% { opacity: 0.4; }
+    20% { opacity: 0; }
+    50% { transform: translateX(100%) rotate(-15deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .phone-screen::after {
+        animation: none;
+        opacity: 0;
+    }
+}
+
+/* Light mode adjustments */
+.light .phone-mockup-container {
+    background: linear-gradient(145deg, #e8e8ed 0%, #d0d0d8 50%, #b8b8c0 100%);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 12px 32px rgba(0, 0, 0, 0.12),
+        0 24px 64px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(249, 115, 22, 0.06),
+        0 0 40px rgba(249, 115, 22, 0.04),
+        0 0 80px rgba(249, 115, 22, 0.02);
+}
+
+.light .phone-mockup-container::before {
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0.3) 20%,
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.1) 80%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+        inset 1px 0 0 rgba(255, 255, 255, 0.4),
+        inset -1px 0 0 rgba(0, 0, 0, 0.08);
+}
+
+.light .phone-mockup-container::after {
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.1) 15%,
+        transparent 30%,
+        transparent 70%,
+        rgba(0, 0, 0, 0.02) 85%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+.light .dynamic-island {
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.light .dynamic-island::before {
+    background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+}
+
+.light .phone-screen {
+    background: #020205;
+}
+
+.light .phone-screen::before {
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+/* Phone CTA button styling - updated for premium feel */
+.phone-cta-button {
+    margin-top: auto;
+    padding: 0.875rem 1.75rem;
+    background: rgba(249, 115, 22, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     color: #f97316;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 5;
 }
 
-.industry-pill span {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #e4e4e7;
-    white-space: nowrap;
+.phone-cta-button:hover {
+    background: rgba(249, 115, 22, 0.2);
+    border-color: rgba(249, 115, 22, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.15);
 }
 
-.light .industry-pill span {
-    color: #374151;
+.phone-cta-button:active {
+    transform: translateY(0) scale(0.98);
 }
 
-/* Integration pill - same as industry pill */
+.light .phone-cta-button {
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.2);
+}
+
+.light .phone-cta-button:hover {
+    background: rgba(249, 115, 22, 0.15);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+/* Demo screen content spacing improvements */
+.demo-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Consistent spacing between elements */
+}
+
+.demo-screen > *:first-child {
+    margin-top: 0;
+}
+
+.demo-screen > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Avatar area - more breathing room */
+.demo-screen .relative.mb-3,
+.demo-screen .relative.mb-4 {
+    margin-bottom: 24px !important;
+}
+
+/* Status text spacing */
+.demo-screen h3,
+.demo-screen h4 {
+    margin-bottom: 6px !important;
+}
+
+.demo-screen .text-v-orange.text-\[10px\],
+.demo-screen .text-v-orange.text-xs {
+    margin-bottom: 20px !important;
+}
+
+/* Waveform area - more space */
+.demo-screen .flex.items-end.justify-center.gap-1,
+.demo-screen .flex.items-end.justify-center.gap-1\.5 {
+    margin-bottom: 28px !important;
+    height: 60px !important;
+}
+
+/* Waveform bars - slightly refined */
+.waveform-bar {
+    border-radius: 2px;
+    transition: height 0.15s ease-out;
+}
+
+/* ========================================
+   STATUS ROTATOR (Phone Mockup)
+   ======================================== */
+
+.status-rotator {
+    position: relative;
+}
+
+.status-item {
+    display: none;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-item.active {
+    display: inline-flex;
+    animation: statusFadeIn 0.4s ease;
+}
+
+@keyframes statusFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.status-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f97316;
+    flex-shrink: 0;
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(249,115,22,0.4); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(249,115,22,0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .status-item.active { animation: none; }
+    .status-pulse-dot { animation: none; }
+}
+
+/* Integration pills marquee */
 .integration-pill {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    margin: 0.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 9999px;
-    border: 1px solid rgba(21, 21, 34, 0.4);
-    background-color: rgba(11, 11, 16, 0.4);
-    backdrop-filter: blur(8px);
+    white-space: nowrap;
     transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.light .integration-pill {
-    background-color: rgba(243, 244, 246, 0.6);
-    border-color: rgba(209, 211, 215, 0.6);
 }
 
 .integration-pill:hover {
-    border-color: rgba(249, 115, 22, 0.5);
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
-    transform: translateY(-2px);
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.2);
+    transform: translateY(-1px);
 }
 
-.integration-pill img {
-    width: 1.25rem;
-    height: 1.25rem;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s ease;
-}
-
-.light .integration-pill img {
-    filter: none;
-}
-
-.integration-pill:hover img {
-    filter: brightness(0) saturate(100%) invert(46%) sepia(93%) saturate(1484%) hue-rotate(336deg) brightness(102%) contrast(101%);
-}
-
-/* For SVG files that have fill colors, we need to handle them differently */
+.integration-pill img,
 .integration-pill svg {
     width: 1.25rem;
     height: 1.25rem;
