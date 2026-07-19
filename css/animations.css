@@ -535,36 +535,16 @@
     );
 }
 
-/* Status rotator animation */
-.status-rotator {
-    display: inline-flex;
-    align-items: center;
-    gap: 2.5rem;
-    animation: status-rotate 12s linear infinite;
-}
-
-@keyframes status-rotate {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-110px); }
-    45% { transform: translateX(-110px); }
-    50% { transform: translateX(-220px); }
-    70% { transform: translateX(-220px); }
-    75% { transform: translateX(-330px); }
-    95% { transform: translateX(-330px); }
-    100% { transform: translateX(-440px); }
-}
+/* Status rotator - JS handles active class toggling for rotation */
 
 .status-item {
-    display: inline-flex;
+    display: none;
     align-items: center;
     gap: 0.5rem;
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
 }
 
 .status-item.active {
-    opacity: 1;
+    display: inline-flex;
 }
 
 /* Scroll hint bounce animation */

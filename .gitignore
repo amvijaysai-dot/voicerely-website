@@ -35,3 +35,6 @@ yarn-error.log*
 coverage/
 .nyc_output/
 .env*
+
+# Development archive - debug/recovery files not for production
+dev-archive/

@@ -68,9 +68,11 @@ function initPhoneStatusRotator() {
     
     let current = 0;
     setInterval(() => {
+        // Add active to next item first, then remove from current (prevents gap)
+        const next = (current + 1) % items.length;
+        items[next].classList.add('active');
         items[current].classList.remove('active');
-        current = (current + 1) % items.length;
-        items[current].classList.add('active');
+        current = next;
     }, 2000);
 }
 
@@ -125,15 +127,12 @@ async function submitPhoneNumber() {
         if (data.success) {
             // Call initiated successfully - show call initiated screen
             PhoneController.setScreen(PhoneController.SCREENS.CALL_INITIATED);
-            
-            // TODO: Implement client-side rate limiting (e.g., disable button for 60s after call)
-            // TODO: Consider adding server-side rate limiting in /api/start-demo-call.js
         } else {
             // API returned error - show error state
             PhoneController.setScreen(PhoneController.SCREENS.DIALPAD);
             phoneInput && phoneInput.classList.add('border-red-500');
-            // TODO: Show user-friendly error message (data.error)
-            console.error('Call failed:', data.error);
+            // Show user-friendly error message (including rate limit errors)
+            showError(data.error || 'Something went wrong — please try again');
         }
     } catch (error) {
         // Network or unexpected error
@@ -168,10 +167,6 @@ function hideError() {
         existingError.remove();
     }
 }
-
-// TODO: Add server-side rate limiting before public launch
-// e.g., max 1 demo call per phone number per hour to prevent abuse
-// Consider using Vercel Edge Middleware or a Redis-based rate limiter in /api/start-demo-call.js
 
 // Reset demo - returns to original hero screen
 function resetDemo() {
