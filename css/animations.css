@@ -425,13 +425,28 @@
 
 /* Shift avatar/waveform up on homepage to give more space for status rotator */
 .desktop-phone-mockup .demo-screen .flex.flex-col.items-center.flex-grow.justify-center {
-    margin-top: -15px !important;
+    margin-top: -35px !important;
     margin-bottom: 5px !important;
 }
 
 .desktop-phone-mockup .status-rotator {
     margin-top: 0 !important;
     margin-bottom: 15px !important;
+}
+
+/* Smaller phone mockup (howitworks) - reduced padding */
+.howitworks-phone-mockup .phone-screen > .demo-screen {
+    padding: 22px 18px 18px 18px;
+}
+
+.howitworks-phone-mockup .demo-screen .flex.flex-col.items-center.flex-grow.justify-center {
+    margin-top: -10px !important;
+    margin-bottom: 4px !important;
+}
+
+.howitworks-phone-mockup .status-rotator {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
 }
 
 /* Hide inactive screens */
