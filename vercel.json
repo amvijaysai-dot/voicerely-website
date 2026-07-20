@@ -3,13 +3,5 @@
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
-  "trailingSlash": false,
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "vercel-nodejs@4.0.0"
-    },
-    "api/**/*.mjs": {
-      "runtime": "vercel-nodejs@4.0.0"
-    }
-  }
+  "trailingSlash": false
 }
