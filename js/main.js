@@ -72,11 +72,38 @@ document.addEventListener('DOMContentLoaded', () => {
         lineObserver.observe(timelineLine);
     }
 
+    // Trigger hidden cost card animations on index.html
+    const hiddenCostCards = document.querySelectorAll('.hidden-cost-card');
+    
+    if (hiddenCostCards.length > 0) {
+        const hiddenCostObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Stagger the animation for each card
+                    hiddenCostCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate');
+                        }, index * 150);
+                    });
+                    // Stop observing after animation is triggered
+                    hiddenCostObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Observe the section
+        const hiddenCostSection = document.getElementById('hidden-cost');
+        if (hiddenCostSection) {
+            hiddenCostObserver.observe(hiddenCostSection);
+        }
+    }
+
     // Parallax effect for floating icons around the phone mockup
     const floatingIcons = document.querySelectorAll('.floating-icon');
     const container = document.querySelector('.phone-mockup-container');
 
-    if (container && floatingIcons.length > 0) {
+    // Respect reduced motion preference
+    if (container && floatingIcons.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         container.addEventListener('mousemove', (e) => {
             const rect = container.getBoundingClientRect();
             const offsetX = e.clientX - rect.left - rect.width / 2;

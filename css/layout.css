@@ -226,7 +226,7 @@
 }
 
 /* Responsive: stack to single column below 768px */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;

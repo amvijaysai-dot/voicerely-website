@@ -1,6 +1,7 @@
 /**
  * Pricing Page JavaScript
- * Handles currency selection, billing toggle, and FAQ accordion with localStorage persistence
+ * Handles currency selection, billing toggle with localStorage persistence
+ * FAQ accordion is handled by shared js/accordion.js module
  */
 
 // Currency conversion rates (simplified for demo)
@@ -115,53 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize FAQ accordion
-    initFAQAccordion();
-    
     // Initialize
     updatePrices();
 });
-
-// FAQ Accordion functionality
-function initFAQAccordion() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-q');
-        const answer = item.querySelector('.faq-a');
-        const icon = item.querySelector('.faq-icon');
-        
-        // Initially collapse all answers
-        answer.style.maxHeight = '0';
-        answer.style.overflow = 'hidden';
-        answer.style.transition = 'max-height 0.3s ease';
-        
-        question.addEventListener('click', function() {
-            // Close all other answers
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    const otherAnswer = otherItem.querySelector('.faq-a');
-                    const otherIcon = otherItem.querySelector('.faq-icon');
-                    otherAnswer.style.maxHeight = '0';
-                    otherItem.classList.remove('active');
-                    // Reset chevron rotation
-                    if (otherIcon) {
-                        otherIcon.style.transform = 'rotate(0deg)';
-                    }
-                }
-            });
-            
-            // Toggle current answer
-            const isActive = item.classList.contains('active');
-            if (isActive) {
-                answer.style.maxHeight = '0';
-                item.classList.remove('active');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                item.classList.add('active');
-                icon.style.transform = 'rotate(180deg)';
-            }
-        });
-    });
-}

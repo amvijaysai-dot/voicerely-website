@@ -1,10 +1,11 @@
 /**
- * FAQ Page JavaScript
- * Handles accordion functionality
+ * Shared FAQ Accordion Module
+ * ARIA-aware accordion functionality for FAQ sections
+ * Used by faq.html and pricing.html
  */
 
-// FAQ Accordion functionality
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize FAQ Accordion
+function initFAQAccordion() {
     const faqItems = document.querySelectorAll('.faq-item');
     
     faqItems.forEach(item => {
@@ -17,12 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
         answer.style.overflow = 'hidden';
         answer.style.transition = 'max-height 0.3s ease';
         
+        // Set initial ARIA attributes
+        question.setAttribute('aria-expanded', 'false');
+        answer.setAttribute('aria-hidden', 'true');
+        
         question.addEventListener('click', function() {
             // Close all other answers
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     const otherAnswer = otherItem.querySelector('.faq-a');
                     const otherIcon = otherItem.querySelector('.faq-icon');
+                    const otherQuestion = otherItem.querySelector('.faq-q');
                     otherAnswer.style.maxHeight = '0';
                     otherItem.classList.remove('active');
                     // Reset chevron rotation
@@ -30,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         otherIcon.style.transform = 'rotate(0deg)';
                     }
                     // Update ARIA
-                    if (otherItem.querySelector('.faq-q')) {
-                        otherItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+                    if (otherQuestion) {
+                        otherQuestion.setAttribute('aria-expanded', 'false');
                     }
                     if (otherAnswer) {
                         otherAnswer.setAttribute('aria-hidden', 'true');
@@ -56,4 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+}
+
+// Auto-initialize on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', initFAQAccordion);

@@ -3,45 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Schedule a Call — Voicerely</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- SEO Meta Tags -->
+    <title>Schedule a Live Demo — Voicerely</title>
+    <meta name="description" content="Book a free 30-minute strategy call and experience an AI voice agent customized for your business. We'll demonstrate real inbound and outbound conversations.">
+    <meta name="keywords" content="AI voice, voice agents, demo, consultation, booking, schedule call">
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Schedule a Live Demo — Voicerely">
+    <meta property="og:description" content="Book a free 30-minute strategy call and experience an AI voice agent customized for your business.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://voicerely.com/schedule.html">
+    <meta property="og:image" content="https://voicerely.com/assets/images/og-schedule.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Schedule a Live Demo — Voicerely">
+    <meta name="twitter:description" content="Book a free 30-minute strategy call and experience an AI voice agent customized for your business.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://voicerely.com/schedule.html">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,800;1,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    colors: {
-                        'v-black': '#020205',
-                        'v-dark': '#0b0b10',     
-                        'v-border': '#151522',       
-                        'v-muted': '#a1a1aa',        
-                        'v-orange': '#f97316'        
-                    }
-                }
-            }
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/tailwind-output.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/schedule.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Schedule a Live Demo",
+        "description": "Book a free 30-minute strategy call and experience an AI voice agent customized for your business",
+        "url": "https://voicerely.com/schedule.html",
+        "mainEntity": {
+            "@type": "ScheduleAction",
+            "name": "Book AI Voice Demo",
+            "description": "Schedule a live demonstration of Voicerely's AI Voice Agents"
         }
+    }
     </script>
-    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-v-black text-v-muted font-sans antialiased">
-    <main class="w-full py-20">
-        <div class="max-w-2xl mx-auto px-4 text-center">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white [.light_&]:text-gray-900 mb-4">Schedule a Call</h1>
-            <p class="text-lg text-v-muted [.light_&]:text-gray-600 mb-8">Book a time to discuss your AI voice needs.</p>
-            <div class="bg-v-dark/50 border border-v-border [.light_&]:bg-gray-50 rounded-2xl p-8">
-                <p class="text-v-orange mb-4">Placeholder - Booking integration pending</p>
-                <p class="text-sm text-zinc-400">Contact: <a href="mailto:hello@voicerely.com" class="text-v-orange">hello@voicerely.com</a></p>
+<body class="bg-v-black text-v-muted font-sans antialiased selection:bg-orange-500 selection:text-white [.light_&]:bg-white [.light_&]:text-gray-600 transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="w-full bg-v-black/40 [.light_&]:bg-white/40 backdrop-blur-md border-b border-v-border/60 [.light_&]:border-gray-200 sticky top-0 z-50 shrink-0 h-[64px] md:h-20 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between w-full">
+            <a href="index.html" class="flex items-center shrink-0 outline-none" aria-label="Voicerely Home">
+                <span class="font-sans font-extrabold text-base md:text-xl tracking-tight text-white [.light_&]:text-gray-900 flex items-center transition-colors">
+                    VOICERELY<span class="bg-v-orange w-1.5 h-1.5 rounded-full ml-1.5 inline-block"></span>
+                </span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="howitworks.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">How It Works</a>
+                <a href="voicerelyagents.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Voicerely Agents</a>
+                <a href="pricing.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Pricing</a>
+                <a href="faq.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">FAQ</a>
             </div>
-            <a href="index.html" class="inline-block mt-8 text-v-orange hover:text-orange-400">← Back to homepage</a>
+            
+            <div class="flex items-center gap-3 md:gap-4">
+                <button type="button" onclick="toggleTheme()" class="flex items-center justify-center w-11 h-11 rounded-full bg-v-dark border border-v-border [.light_&]:bg-gray-100 [.light_&]:border-gray-300 text-zinc-400 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-black transition-all outline-none" aria-label="Toggle Theme">
+                    <svg class="w-4 h-4 block [.light_&]:hidden" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg class="w-4 h-4 hidden [.light_&]:block" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                
+                <button type="button" onclick="openCalModal()" class="font-sans text-[11px] font-bold tracking-[0.02em] px-4 py-2.5 md:px-5 md:py-3 rounded-full uppercase bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:brightness-110 transition-all shadow-lg shadow-orange-600/20 whitespace-nowrap inline-flex items-center justify-center">
+                    Get Started
+                </button>
+                
+                <button type="button" onclick="toggleMobileMenu(true)" class="flex md:hidden items-center justify-center w-11 h-11 text-white [.light_&]:text-gray-900 outline-none" aria-label="Open Mobile Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+        <div id="mobileMenuPanel" class="absolute right-0 top-0 bottom-0 w-72 bg-v-dark [.light_&]:bg-white border-l border-v-border [.light_&]:border-gray-200 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out">
+            <div class="w-full flex flex-col">
+                <div class="w-full flex items-center justify-between mb-8">
+                    <span class="font-sans font-black text-sm tracking-widest text-white [.light_&]:text-gray-900">NAVIGATION</span>
+                    <button type="button" onclick="toggleMobileMenu(false)" class="w-11 h-11 flex items-center justify-center text-zinc-500 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-gray-900" aria-label="Close Drawer">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-5">
+                    <a href="howitworks.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">How It Works</a>
+                    <a href="voicerelyagents.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Voicerely Agents</a>
+                    <a href="pricing.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Pricing</a>
+                    <a href="faq.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="schedule-page w-full">
+        <div class="schedule-container">
+            <div class="schedule-layout">
+                
+                <!-- Left Content -->
+                <div class="schedule-content">
+                    <!-- Badge -->
+                    <span class="schedule-badge schedule-fade-in" style="--animation-delay: 0;">
+                        <span class="schedule-badge-dot"></span>
+                        <span class="schedule-badge-text">Free 30-Minute Demo</span>
+                    </span>
+                    
+                    <!-- Title -->
+                    <h1 class="schedule-title schedule-fade-in" style="--animation-delay: 0.1;">
+                        Schedule a Live Demo
+                    </h1>
+                    
+                    <!-- Description -->
+                    <p class="schedule-description schedule-fade-in" style="--animation-delay: 0.2;">
+                        Book a 30-minute strategy session and experience an AI voice agent tailored to your business. See live inbound and outbound conversations, ask questions, and discover how AI can automate your customer interactions.
+                    </p>
+                    
+                    <!-- Benefits Checklist -->
+                    <div class="schedule-benefits schedule-fade-in" style="--animation-delay: 0.3;">
+                        <div class="schedule-benefit">
+                            <div class="schedule-benefit-icon-container">
+                                <svg class="schedule-benefit-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span>Personalized AI Agent Demo</span>
+                        </div>
+                        <div class="schedule-benefit">
+                            <div class="schedule-benefit-icon-container">
+                                <svg class="schedule-benefit-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span>Talk to an AI Agent built for your business</span>
+                        </div>
+                        <div class="schedule-benefit">
+                            <div class="schedule-benefit-icon-container">
+                                <svg class="schedule-benefit-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span>Live inbound & outbound call demonstration</span>
+                        </div>
+                        <div class="schedule-benefit">
+                            <div class="schedule-benefit-icon-container">
+                                <svg class="schedule-benefit-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span>AI workflow recommendations</span>
+                        </div>
+                        <div class="schedule-benefit">
+                            <div class="schedule-benefit-icon-container">
+                                <svg class="schedule-benefit-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span>30-minute implementation Q&A</span>
+                        </div>
+                        <div class="schedule-benefit">
+                            <div class="schedule-benefit-icon-container">
+                                <svg class="schedule-benefit-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span>No commitment required</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Trust Indicator -->
+                    <div class="schedule-stats schedule-fade-in" style="--animation-delay: 0.4;">
+                        <div class="schedule-trust-badge">
+                            <svg class="w-5 h-5 text-v-orange" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.89 2.09a1 1 0 00-.364 1.117l1.07 3.292c.3.921-.755 1.688-1.54 1.117l-2.89-2.09a1 1 0 00-1.175 0l-2.89 2.09c-.784.57-1.838-.197-1.539-1.117l1.07-3.292a1 1 0 00-.364-1.117l-2.89-2.09c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <span class="schedule-stats-text">
+                                <strong>200+ Businesses Helped</strong>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <div class="schedule-cta schedule-fade-in" style="--animation-delay: 0.5; margin-top: 1.5rem;">
+                        <button type="button" onclick="openCalModal()" class="schedule-btn font-sans font-semibold tracking-wide bg-v-orange text-white text-sm uppercase rounded-full shadow-lg shadow-orange-500/25 hover:brightness-110 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-v-orange flex items-center gap-2 inline-flex px-8 py-4">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Book Demo
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Calendar -->
+                <div class="schedule-calendar-wrapper">
+                    <!-- Cal inline embed code begins -->
+                    <div id="my-cal-inline-demo" style="width:100%;height:100%;overflow:hidden;"></div>
+
+                    <script type="text/javascript">
+                    (function (C, A, L) {
+                    let p=function(a,ar){a.q.push(ar);};
+                    let d=C.document;
+                    C.Cal=C.Cal||function(){
+                    let cal=C.Cal;
+                    let ar=arguments;
+                    if(!cal.loaded){
+                    cal.ns={};
+                    cal.q=cal.q||[];
+                    d.head.appendChild(d.createElement("script")).src=A;
+                    cal.loaded=true;
+                    }
+                    if(ar[0]===L){
+                    const api=function(){p(api,arguments);};
+                    const namespace=ar[1];
+                    api.q=api.q||[];
+                    if(typeof namespace==="string"){
+                    cal.ns[namespace]=cal.ns[namespace]||api;
+                    p(cal.ns[namespace],ar);
+                    p(cal,["initNamespace",namespace]);
+                    }else{
+                    p(cal,ar);
+                    }
+                    return;
+                    }
+                    p(cal,ar);
+                    };
+                    })(window,"https://app.cal.com/embed/embed.js","init");
+
+                    Cal("init","demo",{origin:"https://app.cal.com"});
+                    Cal.config=Cal.config||{};
+                    Cal.config.forwardQueryParams=true;
+
+                    Cal.ns.demo("inline",{
+                    elementOrSelector:"#my-cal-inline-demo",
+                    calLink:"amvijaysai1/demo",
+                    config:{
+                    layout:"month_view",
+                    useSlotsViewOnSmallScreen:true,
+                    theme:"dark"
+                    }
+                    });
+
+                    Cal.ns.demo("ui",{
+                    theme:"dark",
+                    hideEventTypeDetails:false,
+                    layout:"month_view"
+                    });
+                    </script>
+                    <!-- Cal inline embed code ends -->
+                </div>
+                
+            </div>
         </div>
     </main>
+    
+    <!-- Premium Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- Column 1: Brand + Contact -->
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        VOICERELY<span class="bg-v-orange w-1.5 h-1.5 rounded-full ml-1.5 inline-block"></span>
+                    </a>
+                    <p class="footer-desc">
+                        Human-grade AI voice systems that answer, qualify, and book — 24/7.
+                    </p>
+                    <a href="mailto:hello@voicerely.com" class="footer-mail">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        hello@voicerely.com
+                    </a>
+                </div>
+                
+                <!-- Column 2: Product -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="howitworks.html">How It Works</a></li>
+                        <li><a href="voicerelyagents.html">Voicerely Agents</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><button type="button" onclick="openCalModal()" class="text-left">Schedule Demo</button></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Legal -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Voicerely. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
     <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/schedule.js"></script>
 </body>
 </html>

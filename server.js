@@ -1,11 +1,19 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+// Serve static website
+app.use(express.static(__dirname));
+
+// Homepage
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 const RETELL_API_URL = 'https://api.retellai.com/v2/create-phone-call';
 const RETELL_API_KEY = process.env.RETELL_API_KEY || 'YOUR_RETELL_API_KEY';

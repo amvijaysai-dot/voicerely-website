@@ -413,9 +413,25 @@
     inset: 0;
     display: flex;
     flex-direction: column;
-    padding: 24px 20px 20px 20px;
+    padding: 28px 24px 24px 24px;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
+}
+
+/* Larger phone mockup (homepage) - increased padding */
+.desktop-phone-mockup .phone-screen > .demo-screen {
+    padding: 32px 28px 28px 28px;
+}
+
+/* Shift avatar/waveform up on homepage to give more space for status rotator */
+.desktop-phone-mockup .demo-screen .flex.flex-col.items-center.flex-grow.justify-center {
+    margin-top: -15px !important;
+    margin-bottom: 5px !important;
+}
+
+.desktop-phone-mockup .status-rotator {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
 }
 
 /* Hide inactive screens */

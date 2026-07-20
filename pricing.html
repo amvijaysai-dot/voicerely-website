@@ -4,37 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pricing — Voicerely</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,800;1,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Premium Design System Configuration Engine -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    colors: {
-                        'v-black': '#020205',
-                        'v-dark': '#0b0b10',     
-                        'v-border': '#151522',       
-                        'v-muted': '#a1a1aa',        
-                        'v-orange': '#f97316'        
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="css/tailwind-output.min.css">
     <!-- External Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/pricing.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body class="bg-v-black text-v-muted font-sans antialiased relative overflow-x-hidden selection:bg-orange-500 selection:text-white [.light_&]:bg-white [.light_&]:text-gray-600 transition-colors duration-300">
 
@@ -63,13 +46,13 @@
           <div class="flex items-center gap-3 md:gap-4">
             <!-- Theme Switcher Button -->
             <button type="button" onclick="toggleTheme()" class="flex items-center justify-center w-11 h-11 rounded-full bg-v-dark border border-v-border [.light_&]:bg-gray-100 [.light_&]:border-gray-300 text-zinc-400 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-black transition-all outline-none" aria-label="Toggle Theme">
-              <svg class="w-4 h-4 block [.light_&]:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-              <svg class="w-4 h-4 hidden [.light_&]:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+              <svg class="w-4 h-4 block [.light_&]:hidden" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              <svg class="w-4 h-4 hidden [.light_&]:block" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
             </button>
             
-<button type="button" onclick="toggleTheme()" class="font-sans text-[11px] font-bold tracking-[0.02em] px-4 py-2.5 md:px-5 md:py-3 rounded-full uppercase bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:brightness-110 transition-all shadow-lg shadow-orange-600/20 whitespace-nowrap">
+    <button type="button" onclick="openCalModal()" class="font-sans text-[11px] font-bold tracking-[0.02em] px-4 py-2.5 md:px-5 md:py-3 rounded-full uppercase bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:brightness-110 transition-all shadow-lg shadow-orange-600/20 whitespace-nowrap inline-flex items-center justify-center">
                Get Started
-            </button>
+             </button>
 
             <!-- Hamburger Menu Trigger (Mobile) -->
             <button type="button" onclick="toggleMobileMenu(true)" class="flex md:hidden items-center justify-center w-11 h-11 text-white [.light_&]:text-gray-900 outline-none" aria-label="Open Mobile Menu">
@@ -154,64 +137,64 @@
                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Overage at $0.25/min</li>
                  <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email support, 48h response</li>
                </ul>
-               <a href="schedule.html" class="cta-btn">Get Started</a>
+               <button type="button" onclick="openCalModal()" class="cta-btn">Get Started</button>
              </div>
 
              <!-- Starter Tier -->
-            <div class="pricing-card starter" data-tier="starter">
-              <div class="tier-name">Starter</div>
-              <div class="price-row">
-                <span class="price" data-monthly="499">$499</span>
-                <span class="price-unit">/mo</span>
-              </div>
-              <div class="billed-note"><span class="billed-text">Billed monthly</span><span class="setup-fee-tag">+ setup fee</span></div>
-              <ul class="feature-list">
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1 voice agent</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2 CRM integrations</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1,500 minutes/mo</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Overage at $0.20/min</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Call recording access</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email support, 48h response</li>
-              </ul>
-              <a href="schedule.html" class="cta-btn">Get Started</a>
+             <div class="pricing-card starter" data-tier="starter">
+               <div class="tier-name">Starter</div>
+               <div class="price-row">
+                 <span class="price" data-monthly="499">$499</span>
+                 <span class="price-unit">/mo</span>
+               </div>
+               <div class="billed-note"><span class="billed-text">Billed monthly</span><span class="setup-fee-tag">+ setup fee</span></div>
+               <ul class="feature-list">
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1 voice agent</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2 CRM integrations</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1,500 minutes/mo</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Overage at $0.20/min</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Call recording access</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email support, 48h response</li>
+               </ul>
+              <button type="button" onclick="openCalModal()" class="cta-btn">Get Started</button>
             </div>
 
-            <!-- Growth Tier (Popular) -->
-            <div class="pricing-card growth" data-tier="growth">
-              <div class="badge">Most popular</div>
-              <div class="tier-name">Growth</div>
-              <div class="price-row">
-                <span class="price" data-monthly="1497">$1,497</span>
-                <span class="price-unit">/mo</span>
-              </div>
-              <div class="billed-note"><span class="billed-text">Billed monthly</span><span class="setup-fee-tag">+ setup fee</span></div>
-              <ul class="feature-list">
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>3 voice agents</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>3 CRM integrations</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>6,000 minutes/mo</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No overage</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom voice cloning</li>
-                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Analytics dashboard</li>
+             <!-- Growth Tier (Popular) -->
+             <div class="pricing-card growth" data-tier="growth">
+               <div class="badge">Most popular</div>
+               <div class="tier-name">Growth</div>
+               <div class="price-row">
+                 <span class="price" data-monthly="1497">$1,497</span>
+                 <span class="price-unit">/mo</span>
+               </div>
+               <div class="billed-note"><span class="billed-text">Billed monthly</span><span class="setup-fee-tag">+ setup fee</span></div>
+               <ul class="feature-list">
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>3 voice agents</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>3 CRM integrations</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>6,000 minutes/mo</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No overage</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom voice cloning</li>
+                  <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Analytics dashboard</li>
                </ul>
-               <a href="schedule.html" class="cta-btn">Get Started</a>
+               <button type="button" onclick="openCalModal()" class="cta-btn">Get Started</button>
              </div>
 
-            <!-- Enterprise Tier -->
-            <div class="pricing-card enterprise" data-tier="enterprise">
-              <div class="tier-name">Enterprise</div>
-              <div class="price-row">
-                <span class="price">Custom</span>
-              </div>
-              <div class="billed-note">Tailored to your volume</div>
-              <ul class="feature-list">
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited agents, integrations, minutes</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated account manager</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>White-label</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>API access</li>
-                <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>SLA guarantee</li>
-              </ul>
-              <a href="schedule.html" class="cta-btn">Book a Call</a>
+             <!-- Enterprise Tier -->
+             <div class="pricing-card enterprise" data-tier="enterprise">
+               <div class="tier-name">Enterprise</div>
+               <div class="price-row">
+                 <span class="price">Custom</span>
+               </div>
+               <div class="billed-note">Tailored to your volume</div>
+               <ul class="feature-list">
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited agents, integrations, minutes</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated account manager</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>White-label</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>API access</li>
+                 <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>SLA guarantee</li>
+               </ul>
+              <button type="button" onclick="openCalModal()" class="cta-btn">Book a Call</button>
             </div>
           </div>
         </div>
@@ -366,7 +349,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
           <div class="bottom-cta">
             <p>Not sure which tier fits? Book a 15-minute strategy call.</p>
-            <a href="schedule.html">Schedule a call</a>
+            <button type="button" onclick="openCalModal()" class="inline-flex items-center justify-center">Schedule a call</button>
           </div>
         </div>
       </section>
@@ -398,9 +381,49 @@
       </div>
     </footer>
 
+    <!-- Cal.com Element Click Integration -->
+    <script type="text/javascript">
+    (function (C, A, L) {
+    let p = function (a, ar) { a.q.push(ar); };
+    let d = C.document;
+    C.Cal = C.Cal || function () {
+    let cal = C.Cal;
+    let ar = arguments;
+    if (!cal.loaded) {
+    cal.ns = {};
+    cal.q = cal.q || [];
+    d.head.appendChild(d.createElement("script")).src = A;
+    cal.loaded = true;
+    }
+    if (ar[0] === L) {
+    const api = function () { p(api, arguments); };
+    const namespace = ar[1];
+    api.q = api.q || [];
+    if(typeof namespace === "string"){
+    cal.ns[namespace] = cal.ns[namespace] || api;
+    p(cal.ns[namespace], ar);
+    p(cal, ["initNamespace", namespace]);
+    }else p(cal, ar);
+    return;
+    }
+    p(cal, ar);
+    };
+    })(window,"https://app.cal.com/embed/embed.js","init");
+
+    Cal("init","demo",{origin:"https://app.cal.com"});
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+
+    Cal.ns.demo("ui",{
+    hideEventTypeDetails:false,
+    layout:"month_view"
+    });
+    </script>
+    
     <!-- Scripts -->
     <script src="js/theme.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/schedule.js"></script>
     <script src="js/pricing.js"></script>
 </body>
 </html>

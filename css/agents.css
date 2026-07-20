@@ -701,15 +701,36 @@
 .hidden-cost-section {
     padding: 120px 24px;
     border-top: 1px solid var(--v-border, #151522);
+    position: relative;
 }
 
 .light .hidden-cost-section {
     border-top-color: #d1d5db;
 }
 
+/* Subtle connecting line behind the cards */
+.hidden-cost-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(249, 115, 22, 0.15) 20%, 
+        rgba(249, 115, 22, 0.15) 80%, 
+        transparent 100%);
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .hidden-cost-container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .hidden-cost-grid {
@@ -719,8 +740,11 @@
 }
 
 .hidden-cost-card {
-    background: var(--v-dark, #131316);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.03) 0%, 
+        rgba(255, 255, 255, 0.01) 50%, 
+        rgba(249, 115, 22, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
     padding: 32px;
     display: flex;
@@ -733,45 +757,88 @@
 }
 
 .hidden-cost-card.animate {
-    animation-delay: calc(var(--animation-delay, 0ms) * 1);
+    animation-delay: calc(var(--animation-delay, 0) * 150ms);
 }
 
 .light .hidden-cost-card {
-    background: #ffffff;
-    border-color: #d1d5db;
+    background: linear-gradient(180deg, 
+        #ffffff 0%, 
+        #fafafa 50%, 
+        #fff7f0 100%);
+    border-color: #e5e7eb;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .hidden-cost-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     border-color: var(--v-orange, #f97316);
-    box-shadow: 0 18px 44px rgba(249, 115, 22, 0.15);
+    box-shadow: 0 24px 48px rgba(249, 115, 22, 0.12), 
+                0 0 0 1px rgba(249, 115, 22, 0.1);
 }
 
-.hidden-cost-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    background: var(--v-orange, #f97316);
-    color: #1a0a02;
-    font-size: 10px;
-    font-weight: 700;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 16px;
+.light .hidden-cost-card:hover {
+    box-shadow: 0 24px 48px rgba(249, 115, 22, 0.1), 
+                0 0 0 1px rgba(249, 115, 22, 0.15);
 }
 
-.hidden-cost-icon {
+/* Icon container with gradient background */
+.hidden-cost-icon-container {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, 
+        rgba(249, 115, 22, 0.12) 0%, 
+        rgba(249, 115, 22, 0.06) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.hidden-cost-card:hover .hidden-cost-icon-container {
+    background: linear-gradient(135deg, 
+        rgba(249, 115, 22, 0.2) 0%, 
+        rgba(249, 115, 22, 0.1) 100%);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15);
+}
+
+.hidden-cost-icon-container svg {
     width: 28px;
     height: 28px;
+    stroke-width: 2;
     color: var(--v-orange, #f97316);
-    margin-bottom: 20px;
 }
 
-.hidden-cost-icon svg {
-    width: 100%;
-    height: 100%;
-    stroke-width: 1.5;
+/* Badge redesign - outlined/ghost style */
+.hidden-cost-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: transparent;
+    color: var(--v-orange, #f97316);
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid var(--v-orange, #f97316);
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+.hidden-cost-card:hover .hidden-cost-badge {
+    background: var(--v-orange, #f97316);
+    color: #1a0a02;
+}
+
+.light .hidden-cost-badge {
+    border-color: var(--v-orange, #f97316);
+    color: var(--v-orange, #f97316);
+}
+
+.light .hidden-cost-card:hover .hidden-cost-badge {
+    background: var(--v-orange, #f97316);
+    color: #ffffff;
 }
 
 .hidden-cost-heading {
@@ -800,9 +867,9 @@
 
 .hidden-cost-footer {
     font-size: 12px;
-    color: #6b7280;
-    margin-top: auto;
-    font-style: italic;
+    color: var(--v-orange, #f97316);
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .hidden-cost-cta {
@@ -814,7 +881,7 @@
     font-size: 18px;
     font-weight: 600;
     color: #f5f5f6;
-    margin: 0 0 12px;
+    margin: 0 0 8px;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -825,7 +892,7 @@
 .hidden-cost-cta-subtext {
     font-size: 14px;
     color: #a1a1aa;
-    margin: 0 0 20px;
+    margin: 0 0 24px;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -836,33 +903,38 @@
 .hidden-cost-cta-button {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    padding: 12px 24px;
+    padding: 14px 28px;
     background: var(--v-orange, #f97316);
     color: #1a0a02;
+    font-size: 14px;
+    font-weight: 700;
     border-radius: 999px;
     text-decoration: none;
-    font-weight: 600;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .hidden-cost-cta-button:hover {
     background: #e0650f;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(249, 115, 22, 0.3);
 }
 
 @media (max-width: 1024px) {
     .hidden-cost-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .hidden-cost-section::before {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
     .hidden-cost-section {
         padding: 80px 24px;
+    }
+    
+    .hidden-cost-section::before {
+        display: none;
     }
 }
 
@@ -1543,7 +1615,7 @@
     align-items: stretch;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .blueprint-split {
         grid-template-columns: 1fr;
     }
@@ -1712,7 +1784,7 @@
     gap: 32px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .trust-matrix-grid {
         grid-template-columns: 1fr;
     }
