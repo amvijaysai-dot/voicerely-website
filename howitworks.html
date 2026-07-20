@@ -110,7 +110,7 @@
                    Book a Live Demo
                  </a>
                 
-                <button type="button" onclick="phone.setScreen('dialpad')" class="w-full sm:w-auto h-[52px] font-sans font-semibold tracking-[0.02em] bg-transparent border border-zinc-700 [.light_&]:border-gray-300 text-white [.light_&]:text-gray-800 hover:bg-zinc-900 [.light_&]:hover:bg-gray-100 text-[14px] uppercase px-[24px] transition-all rounded-full active:scale-[0.98] flex items-center justify-center shrink-0 whitespace-nowrap">
+                <button type="button" onclick="startDemoFlow()" class="w-full sm:w-auto h-[52px] font-sans font-semibold tracking-[0.02em] bg-transparent border border-zinc-700 [.light_&]:border-gray-300 text-white [.light_&]:text-gray-800 hover:bg-zinc-900 [.light_&]:hover:bg-gray-100 text-[14px] uppercase px-[24px] transition-all rounded-full active:scale-[0.98] flex items-center justify-center shrink-0 whitespace-nowrap">
                   Call Demo Agent
                 </button>
               </div>
@@ -296,7 +296,7 @@
                     </div>
                   </div>
                   <h3 class="text-xl font-bold text-white [.light_&]:text-gray-900 mb-2 font-sans">Discovery Call</h3>
-                  <p class="text-v-orange text-sm font-mono font-semibold mb-3">15 min</p>
+                  <p class="text-v-orange text-sm font-mono font-semibold mb-3">30 min</p>
                   <p class="text-sm text-v-muted [.light_&]:text-gray-600 leading-relaxed">
                     We learn how your business handles calls, appointments, FAQs, and lead qualification.
                   </p>
@@ -362,7 +362,7 @@
                   </div>
                 </div>
                 <h3 class="text-lg font-bold text-white [.light_&]:text-gray-900 mb-2 font-sans">Discovery Call</h3>
-                <p class="text-v-orange text-xs font-mono font-semibold mb-2">15 min</p>
+                <p class="text-v-orange text-xs font-mono font-semibold mb-2">30 min</p>
                 <p class="text-sm text-v-muted [.light_&]:text-gray-600 leading-relaxed">
                   We learn how your business handles calls, appointments, FAQs, and lead qualification.
                 </p>
@@ -691,8 +691,10 @@
             <h2 class="bottom-cta-heading">Still have questions?</h2>
             <p class="bottom-cta-subheading">We're happy to walk you through everything during a free strategy session.</p>
 <div class="bottom-cta-buttons">
-               <a href="schedule.html" class="cta-primary">Book a 15-Minute Call</a>
-               <a href="#" onclick="phone.setScreen('dialpad'); return false;" class="cta-secondary">Call the Demo Agent</a>
+               <a href="schedule.html" class="px-8 py-4 font-sans font-semibold tracking-wide bg-v-orange text-white text-sm uppercase rounded-full shadow-lg shadow-orange-500/25 hover:brightness-110 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-v-orange flex items-center gap-2 inline-flex">
+                 Book a 30-Minute Call
+               </a>
+               <button type="button" onclick="startDemoFlow()" class="cta-secondary">Call the Demo Agent</button>
              </div>
           </div>
         </div>

@@ -2,31 +2,224 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      // Anti-FOUC: apply saved theme before first paint (must run before any CSS renders)
+      (function(){
+        try {
+          if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="description" content="Voicerely's Terms of Service — the terms that govern use of our AI voice agent platform for customers in the United States and Australia.">
+    <link rel="canonical" href="https://voicerely.com/terms.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Terms of Service — Voicerely">
+    <meta property="og:description" content="The terms that govern use of Voicerely's AI voice agent platform.">
+    <meta property="og:url" content="https://voicerely.com/terms.html">
+    <meta property="og:image" content="https://voicerely.com/assets/images/og-cover.jpg">
+    <meta property="og:site_name" content="Voicerely">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Terms of Service — Voicerely">
+    <meta name="twitter:description" content="The terms that govern use of Voicerely's AI voice agent platform.">
+    <meta name="twitter:image" content="https://voicerely.com/assets/images/og-cover.jpg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <title>Terms of Service — Voicerely</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,800;1,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/tailwind-output.min.css">
-    <!-- External Stylesheets -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+      .legal-body h2 { font-size: 1.375rem; font-weight: 800; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+      .legal-body h3 { font-size: 1.05rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+      .legal-body p { margin-bottom: 1rem; line-height: 1.75; }
+      .legal-body ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+      .legal-body li { margin-bottom: 0.5rem; line-height: 1.7; }
+      .legal-body table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.9rem; }
+      .legal-body th, .legal-body td { border: 1px solid var(--v-border, #151522); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
+      .legal-body strong { color: inherit; font-weight: 700; }
+      .callout { border-left: 3px solid #f97316; background: rgba(249,115,22,0.08); padding: 1rem 1.25rem; border-radius: 0.5rem; margin-bottom: 1.5rem; }
+    </style>
 </head>
-<body class="bg-v-black text-v-muted font-sans antialiased">
-    <main class="w-full py-20">
-        <div class="max-w-3xl mx-auto px-4">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white [.light_&]:text-gray-900 mb-8">Terms of Service</h1>
-            <div class="prose prose-invert [.light_&]:prose-invert max-w-none">
-                <p class="text-v-muted [.light_&]:text-gray-600 mb-4">Last updated: July 2026</p>
-                <p class="text-v-muted [.light_&]:text-gray-600 mb-4">Placeholder terms of service content. Replace with actual terms.</p>
-                <p class="text-v-muted [.light_&]:text-gray-600 mb-4">By using Voicerely, you agree to these terms.</p>
+<body class="bg-v-black text-v-muted font-sans antialiased [.light_&]:bg-white [.light_&]:text-gray-600 transition-colors duration-300">
+
+      <!-- Section 1: Top Navigation Bar with Mobile Drawer Integration -->
+      <nav class="w-full bg-v-black/40 [.light_&]:bg-white/40 backdrop-blur-md border-b border-v-border/60 [.light_&]:border-gray-200 sticky top-0 z-50 shrink-0 h-[64px] md:h-20 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between w-full">
+          
+          <!-- Branding Logo -->
+          <a href="index.html" class="flex items-center shrink-0 outline-none">
+            <span class="font-sans font-extrabold text-base md:text-xl tracking-tight text-white [.light_&]:text-gray-900 flex items-center transition-colors">
+              VOICERELY<span class="bg-v-orange w-1.5 h-1.5 rounded-full ml-1.5 inline-block"></span>
+            </span>
+          </a>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="howitworks.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">How It Works</a>
+            <a href="voicerelyagents.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Voicerely Agents</a>
+            <a href="pricing.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Pricing</a>
+            <a href="faq.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">FAQ</a>
+          </div>
+
+          <!-- Actions Area -->
+          <div class="flex items-center gap-3 md:gap-4">
+            <!-- Theme Switcher Button -->
+            <button type="button" onclick="toggleTheme()" class="flex items-center justify-center w-11 h-11 rounded-full bg-v-dark border border-v-border [.light_&]:bg-gray-100 [.light_&]:border-gray-300 text-zinc-400 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-black transition-all outline-none" aria-label="Toggle Theme">
+              <svg class="w-4 h-4 block [.light_&]:hidden" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              <svg class="w-4 h-4 hidden [.light_&]:block" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+            
+            <a href="schedule.html" class="font-sans text-[11px] font-bold tracking-[0.02em] px-4 py-2.5 md:px-5 md:py-3 rounded-full uppercase bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:brightness-110 transition-all shadow-lg shadow-orange-600/20 whitespace-nowrap inline-flex items-center justify-center">
+              Book a Demo
+            </a>
+
+            <!-- Hamburger Menu Trigger (Mobile) -->
+            <button type="button" onclick="toggleMobileMenu(true)" class="flex md:hidden items-center justify-center w-11 h-11 text-white [.light_&]:text-gray-900 outline-none" aria-label="Open Mobile Menu">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Slide-in Drawer Backdrop Menu Layer -->
+      <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+        <div id="mobileMenuPanel" class="absolute right-0 top-0 bottom-0 w-72 bg-v-dark [.light_&]:bg-white border-l border-v-border [.light_&]:border-gray-200 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out">
+          <div class="w-full flex flex-col">
+            <div class="w-full flex items-center justify-between mb-8">
+              <span class="font-sans font-black text-sm tracking-widest text-white [.light_&]:text-gray-900">NAVIGATION</span>
+              <button type="button" onclick="toggleMobileMenu(false)" class="w-11 h-11 flex items-center justify-center text-zinc-500 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-gray-900" aria-label="Close Drawer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
             </div>
-            <a href="index.html" class="inline-block mt-8 text-v-orange hover:text-orange-400">← Back to homepage</a>
+            <div class="flex flex-col space-y-5">
+              <a href="howitworks.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">How It Works</a>
+              <a href="voicerelyagents.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Voicerely Agents</a>
+              <a href="pricing.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Pricing</a>
+              <a href="faq.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <main class="w-full py-16 md:py-20">
+        <div class="max-w-3xl mx-auto px-4">
+            <p class="text-v-orange text-xs font-bold uppercase tracking-wider mb-3">Legal</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white [.light_&]:text-gray-900 mb-2">Terms of Service</h1>
+            <p class="text-v-muted [.light_&]:text-gray-600 mb-10">Last updated: July 21, 2026</p>
+
+            <div class="callout text-sm text-v-muted [.light_&]:text-gray-700">
+                <strong class="text-white [.light_&]:text-gray-900">In plain terms:</strong> By using Voicerely, you agree that you — not Voicerely — are responsible for making sure your AI voice agent's inbound and outbound calling activity complies with the calling, recording, and marketing laws that apply where your callers are located, including the US TCPA/Do-Not-Call rules and Australia's Do Not Call Register Act. Voicerely gives you the tools to help you comply; it's on you to use them correctly.
+            </div>
+
+            <div class="legal-body text-v-muted [.light_&]:text-gray-600">
+
+                <h2 class="text-white [.light_&]:text-gray-900">1. Agreement to terms</h2>
+                <p>These Terms of Service ("Terms") form a binding agreement between you ("Customer," "you") and Voicerely ("Voicerely," "we," "us") governing your access to and use of the Voicerely AI voice agent platform, including our website, dashboard, APIs, and telephony features (collectively, the "Service"). By creating an account or using the Service, you agree to these Terms. If you are entering into these Terms on behalf of a business, you represent that you have authority to bind that business.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">2. Description of the Service</h2>
+                <p>Voicerely provides AI-powered voice agents that can answer inbound calls and place outbound calls on your behalf, using third-party telephony carriage (e.g., Twilio) and conversational voice AI processing (e.g., Retell AI) that Voicerely integrates and manages for you. You configure how your Agent behaves, what phone numbers it uses, and what data it captures.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">3. Eligibility and accounts</h2>
+                <ul>
+                    <li>You must be at least 18 years old and able to form a binding contract to use the Service.</li>
+                    <li>You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account.</li>
+                    <li>You must provide accurate registration information, including your business's country, which determines the data-residency region applied to your account (see Section 8 and our Privacy Policy).</li>
+                </ul>
+
+                <h2 class="text-white [.light_&]:text-gray-900">4. Your responsibilities for calling compliance</h2>
+                <p>This is the most important section of these Terms for anyone using Voicerely to place or receive calls. <strong class="text-white [.light_&]:text-gray-900">You are solely responsible for ensuring your use of the Service — including every call your Agent places or answers — complies with all applicable law in the jurisdiction(s) where your callers are located.</strong> This includes, without limitation:</p>
+
+                <h3 class="text-white [.light_&]:text-gray-900">4.1 United States</h3>
+                <ul>
+                    <li><strong class="text-white [.light_&]:text-gray-900">Telephone Consumer Protection Act (TCPA)</strong> and related FCC rules governing autodialed and AI-generated/"artificial voice" calls, including requirements for prior express (written) consent before certain outbound calls or texts, and rules specific to AI-generated voice calls.</li>
+                    <li><strong class="text-white [.light_&]:text-gray-900">National and state Do Not Call registries</strong> — you must screen outbound call lists against the applicable Do Not Call registry and honor do-not-call requests.</li>
+                    <li><strong class="text-white [.light_&]:text-gray-900">State call recording / two-party consent laws</strong> where recording is enabled.</li>
+                    <li>Permitted calling hours and required identification/disclosure rules that apply to your industry and call type.</li>
+                </ul>
+
+                <h3 class="text-white [.light_&]:text-gray-900">4.2 Australia</h3>
+                <ul>
+                    <li><strong class="text-white [.light_&]:text-gray-900">Do Not Call Register Act 2006</strong> — you must not make, or must not permit your Agent to make, telemarketing calls to numbers listed on the Do Not Call Register, subject to the exemptions that Act provides.</li>
+                    <li><strong class="text-white [.light_&]:text-gray-900">Telecommunications (Interception and Access) Act 1979 (Cth)</strong> and state-based surveillance/listening device laws governing call recording and consent.</li>
+                    <li><strong class="text-white [.light_&]:text-gray-900">Australian Consumer Law</strong> prohibitions on misleading or deceptive conduct, which extend to AI-generated voice communications.</li>
+                </ul>
+
+                <h3 class="text-white [.light_&]:text-gray-900">4.3 General obligations</h3>
+                <ul>
+                    <li>You will maintain and promptly action opt-out/do-not-call requests received by your Agent.</li>
+                    <li>You will not use the Service to place calls for the purpose of fraud, impersonation, harassment, debt collection abuse, robocall spam, or any unlawful purpose.</li>
+                    <li>You will ensure any script, prompt, or disclosure your Agent is configured to deliver is accurate and not misleading to callers.</li>
+                    <li>Where recording is enabled, you are responsible for any caller notification or consent required under Section 6 of our Privacy Policy.</li>
+                </ul>
+                <p>Voicerely may suspend or terminate your account immediately, without refund, if we reasonably believe your use of the Service violates this Section 4 or creates material legal or regulatory risk for Voicerely, our carriers, or other users.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">5. Acceptable use</h2>
+                <p>In addition to Section 4, you agree not to use the Service to: violate any law; infringe another party's rights; transmit malware or interfere with the Service's operation; attempt to reverse-engineer the underlying AI models; resell the Service without our written consent; or use the Service to build a directly competing product.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">6. Fees and billing</h2>
+                <p>Fees for the Service are as set out on our pricing page or in your order form, and are billed in advance on a monthly or annual basis unless stated otherwise. Usage-based charges (e.g., per-minute call costs) are billed in arrears based on recorded usage. Fees are non-refundable except as required by law or as expressly stated in these Terms. We may change our fees with at least 30 days' notice before your next billing cycle.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">7. Third-party services</h2>
+                <p>The Service relies on third-party telephony and AI infrastructure providers (including Twilio and Retell AI) to function. Your use of the Service is also subject to the acceptable-use requirements those providers impose on calls carried over their networks. Voicerely is not liable for outages, errors, or limitations originating from a third-party provider's infrastructure, though we will work to restore service promptly.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">8. Data ownership and residency</h2>
+                <p>As between you and Voicerely, you retain ownership of your call data, transcripts, and configuration content ("Customer Data"). You grant Voicerely a license to process Customer Data solely to provide, maintain, and improve the Service as described in our Privacy Policy. Customer Data for accounts registered in the United States is stored in US-region infrastructure; Customer Data for accounts registered in Australia is stored in Australia-region infrastructure, consistent with Section 3 of our Privacy Policy. On termination, you may export your Customer Data for 30 days before it is deleted in line with our data retention practices.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">9. Intellectual property</h2>
+                <p>Voicerely and its licensors retain all right, title, and interest in the Service, including the underlying software, models, and branding. These Terms do not grant you any rights to Voicerely's intellectual property except the limited right to use the Service as permitted here.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">10. Confidentiality</h2>
+                <p>Each party will protect the other's confidential information with the same degree of care it uses for its own confidential information of similar importance, and not less than reasonable care, and will use it only to perform under these Terms.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">11. Disclaimers</h2>
+                <p>The Service is provided "as is" and "as available." To the maximum extent permitted by law, Voicerely disclaims all warranties, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that AI-generated call responses will be error-free, or that the Service will be uninterrupted. <span class="italic">Nothing in this Section 11 excludes, restricts, or modifies any consumer guarantee under the Australian Consumer Law that cannot lawfully be excluded.</span></p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">12. Limitation of liability</h2>
+                <p>To the maximum extent permitted by law, Voicerely's total liability arising out of or related to these Terms will not exceed the amount you paid Voicerely in the 3 months preceding the claim. Voicerely will not be liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits or lost data. This limitation does not apply to your indemnification obligations under Section 13, or to liability that cannot be limited under applicable law (including certain non-excludable guarantees under the Australian Consumer Law).</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">13. Indemnification</h2>
+                <p>You agree to indemnify and hold Voicerely harmless from any claim, penalty, fine, or liability (including reasonable legal fees) arising from: (a) your calling activity's non-compliance with applicable law, including TCPA, Do Not Call, or call-recording consent requirements described in Section 4; (b) your violation of these Terms; or (c) content or scripts you configure your Agent to deliver.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">14. Term and termination</h2>
+                <p>These Terms remain in effect while you have an active account. Either party may terminate for convenience with notice as set out in your order form, or immediately if the other party materially breaches these Terms and does not cure within 14 days of notice. Voicerely may suspend the Service immediately, without notice, where necessary to prevent harm, comply with law, or address a violation of Section 4 or 5.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">15. Governing law and disputes</h2>
+                <p>For Customers based in the United States, these Terms are governed by the laws of the State of Delaware, without regard to conflict-of-law principles, and disputes will be resolved in the state or federal courts located in Delaware. For Customers based in Australia, these Terms are governed by the laws of New South Wales, Australia, and disputes will be resolved in the courts of New South Wales, without limiting any right you have under the Australian Consumer Law to bring a claim in another forum.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">16. Changes to these Terms</h2>
+                <p>We may update these Terms from time to time. We will notify active Customers of material changes by email at least 14 days before they take effect. Continued use of the Service after that date constitutes acceptance of the updated Terms.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">17. Contact us</h2>
+                <p>Questions about these Terms: <a class="text-v-orange hover:text-orange-400" href="mailto:hello@voicerely.com">hello@voicerely.com</a></p>
+
+                <div class="callout text-xs text-v-muted [.light_&]:text-gray-600 mt-10">
+                    This document is a general-purpose template prepared to reflect common contractual and compliance concepts relevant to a US/Australia voice-AI SaaS business (including TCPA-style outbound calling rules and Australia's Do Not Call Register Act and Australian Consumer Law). It is not legal advice and has not been reviewed by a lawyer licensed in either country. Have qualified counsel in each jurisdiction review this — particularly Sections 4, 11, 12, and 15 — before you rely on it or ask customers to accept it.
+                </div>
+            </div>
+
+            <a href="index.html" class="inline-block mt-10 text-v-orange hover:text-orange-400 text-sm font-semibold">← Back to homepage</a>
         </div>
     </main>
+
+    <footer class="w-full border-t border-v-border/60 [.light_&]:border-gray-200 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-v-muted [.light_&]:text-gray-500">
+        <p>&copy; 2026 Voicerely. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="privacy.html" class="hover:text-v-orange transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-v-orange transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
     <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
 </body>
 </html>

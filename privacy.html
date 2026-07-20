@@ -2,31 +2,226 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      // Anti-FOUC: apply saved theme before first paint (must run before any CSS renders)
+      (function(){
+        try {
+          if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="description" content="Voicerely's Privacy Policy — how we collect, use, store, and protect data for our AI voice agent platform, including region-specific handling for US and Australian customers.">
+    <link rel="canonical" href="https://voicerely.com/privacy.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Privacy Policy — Voicerely">
+    <meta property="og:description" content="How Voicerely collects, uses, stores, and protects data for our AI voice agent platform.">
+    <meta property="og:url" content="https://voicerely.com/privacy.html">
+    <meta property="og:image" content="https://voicerely.com/assets/images/og-cover.jpg">
+    <meta property="og:site_name" content="Voicerely">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy — Voicerely">
+    <meta name="twitter:description" content="How Voicerely collects, uses, stores, and protects data for our AI voice agent platform.">
+    <meta name="twitter:image" content="https://voicerely.com/assets/images/og-cover.jpg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <title>Privacy Policy — Voicerely</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,800;1,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/tailwind-output.min.css">
-    <!-- External Stylesheets -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+      .legal-body h2 { font-size: 1.375rem; font-weight: 800; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+      .legal-body h3 { font-size: 1.05rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+      .legal-body p { margin-bottom: 1rem; line-height: 1.75; }
+      .legal-body ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+      .legal-body li { margin-bottom: 0.5rem; line-height: 1.7; }
+      .legal-body table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.9rem; }
+      .legal-body th, .legal-body td { border: 1px solid var(--v-border, #151522); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
+      .legal-body strong { color: inherit; font-weight: 700; }
+      .callout { border-left: 3px solid #f97316; background: rgba(249,115,22,0.08); padding: 1rem 1.25rem; border-radius: 0.5rem; margin-bottom: 1.5rem; }
+    </style>
 </head>
-<body class="bg-v-black text-v-muted font-sans antialiased">
-    <main class="w-full py-20">
-        <div class="max-w-3xl mx-auto px-4">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white [.light_&]:text-gray-900 mb-8">Privacy Policy</h1>
-            <div class="prose prose-invert [.light_&]:prose-invert max-w-none">
-                <p class="text-v-muted [.light_&]:text-gray-600 mb-4">Last updated: July 2026</p>
-                <p class="text-v-muted [.light_&]:text-gray-600 mb-4">Placeholder privacy policy content. Replace with actual policy.</p>
-                <p class="text-v-muted [.light_&]:text-gray-600 mb-4">We respect your privacy and are committed to protecting your personal data.</p>
+<body class="bg-v-black text-v-muted font-sans antialiased [.light_&]:bg-white [.light_&]:text-gray-600 transition-colors duration-300">
+
+      <!-- Section 1: Top Navigation Bar with Mobile Drawer Integration -->
+      <nav class="w-full bg-v-black/40 [.light_&]:bg-white/40 backdrop-blur-md border-b border-v-border/60 [.light_&]:border-gray-200 sticky top-0 z-50 shrink-0 h-[64px] md:h-20 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between w-full">
+          
+          <!-- Branding Logo -->
+          <a href="index.html" class="flex items-center shrink-0 outline-none">
+            <span class="font-sans font-extrabold text-base md:text-xl tracking-tight text-white [.light_&]:text-gray-900 flex items-center transition-colors">
+              VOICERELY<span class="bg-v-orange w-1.5 h-1.5 rounded-full ml-1.5 inline-block"></span>
+            </span>
+          </a>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="howitworks.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">How It Works</a>
+            <a href="voicerelyagents.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Voicerely Agents</a>
+            <a href="pricing.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">Pricing</a>
+            <a href="faq.html" class="font-sans text-xs font-semibold text-zinc-400 [.light_&]:text-gray-500 hover:text-white [.light_&]:hover:text-v-orange transition-colors">FAQ</a>
+          </div>
+
+          <!-- Actions Area -->
+          <div class="flex items-center gap-3 md:gap-4">
+            <!-- Theme Switcher Button -->
+            <button type="button" onclick="toggleTheme()" class="flex items-center justify-center w-11 h-11 rounded-full bg-v-dark border border-v-border [.light_&]:bg-gray-100 [.light_&]:border-gray-300 text-zinc-400 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-black transition-all outline-none" aria-label="Toggle Theme">
+              <svg class="w-4 h-4 block [.light_&]:hidden" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              <svg class="w-4 h-4 hidden [.light_&]:block" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+            
+            <a href="schedule.html" class="font-sans text-[11px] font-bold tracking-[0.02em] px-4 py-2.5 md:px-5 md:py-3 rounded-full uppercase bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:brightness-110 transition-all shadow-lg shadow-orange-600/20 whitespace-nowrap inline-flex items-center justify-center">
+              Book a Demo
+            </a>
+
+            <!-- Hamburger Menu Trigger (Mobile) -->
+            <button type="button" onclick="toggleMobileMenu(true)" class="flex md:hidden items-center justify-center w-11 h-11 text-white [.light_&]:text-gray-900 outline-none" aria-label="Open Mobile Menu">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Slide-in Drawer Backdrop Menu Layer -->
+      <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+        <div id="mobileMenuPanel" class="absolute right-0 top-0 bottom-0 w-72 bg-v-dark [.light_&]:bg-white border-l border-v-border [.light_&]:border-gray-200 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out">
+          <div class="w-full flex flex-col">
+            <div class="w-full flex items-center justify-between mb-8">
+              <span class="font-sans font-black text-sm tracking-widest text-white [.light_&]:text-gray-900">NAVIGATION</span>
+              <button type="button" onclick="toggleMobileMenu(false)" class="w-11 h-11 flex items-center justify-center text-zinc-500 hover:text-white [.light_&]:text-gray-600 [.light_&]:hover:text-gray-900" aria-label="Close Drawer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
             </div>
-            <a href="index.html" class="inline-block mt-8 text-v-orange hover:text-orange-400">← Back to homepage</a>
+            <div class="flex flex-col space-y-5">
+              <a href="howitworks.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">How It Works</a>
+              <a href="voicerelyagents.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Voicerely Agents</a>
+              <a href="pricing.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">Pricing</a>
+              <a href="faq.html" onclick="toggleMobileMenu(false)" class="font-sans text-sm font-semibold text-zinc-300 [.light_&]:text-gray-700 hover:text-v-orange">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <main class="w-full py-16 md:py-20">
+        <div class="max-w-3xl mx-auto px-4">
+            <p class="text-v-orange text-xs font-bold uppercase tracking-wider mb-3">Legal</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white [.light_&]:text-gray-900 mb-2">Privacy Policy</h1>
+            <p class="text-v-muted [.light_&]:text-gray-600 mb-10">Last updated: July 21, 2026</p>
+
+            <div class="callout text-sm text-v-muted [.light_&]:text-gray-700">
+                <strong class="text-white [.light_&]:text-gray-900">In plain terms:</strong> Voicerely provides AI voice agents that handle inbound and outbound phone calls on behalf of our business customers ("Customers"). We collect and process call audio, transcripts, and related metadata to deliver the service. Data belonging to a Customer based in the United States is stored in our US-region infrastructure; data belonging to a Customer based in Australia is stored in our Australia-region infrastructure. We do not move a Customer's call data across that regional boundary as part of normal operation.
+            </div>
+
+            <div class="legal-body text-v-muted [.light_&]:text-gray-600">
+
+                <h2 class="text-white [.light_&]:text-gray-900">1. Who this policy covers</h2>
+                <p>This Privacy Policy applies to:</p>
+                <ul>
+                    <li><strong class="text-white [.light_&]:text-gray-900">Customers</strong> — businesses that register for a Voicerely account and configure AI voice agents ("Agents") for their own business.</li>
+                    <li><strong class="text-white [.light_&]:text-gray-900">Callers</strong> — individuals who call, or are called by, a Voicerely Agent deployed by a Customer. In most cases, the Customer is the "data controller" (or equivalent) for Caller data under applicable law, and Voicerely acts as a "data processor" or "service provider" carrying out the Customer's instructions. Where this policy describes rights a Caller can exercise, those requests are usually directed first to the Customer whose Agent handled the call; Voicerely will support the Customer in fulfilling that request.</li>
+                    <li><strong class="text-white [.light_&]:text-gray-900">Website visitors</strong> — anyone browsing voicerely.com.</li>
+                </ul>
+
+                <h2 class="text-white [.light_&]:text-gray-900">2. Information we collect</h2>
+                <h3 class="text-white [.light_&]:text-gray-900">2.1 Call data</h3>
+                <ul>
+                    <li>Call audio recordings (inbound and outbound), where recording is enabled for the relevant Agent.</li>
+                    <li>Automated transcripts and AI-generated summaries of calls.</li>
+                    <li>Caller and callee phone numbers, call timestamps, call duration, call direction, and call outcome/disposition data.</li>
+                    <li>Any information a Caller provides verbally during a call that the Agent is configured to capture (for example: name, appointment details, order information) as instructed by the Customer.</li>
+                </ul>
+                <h3 class="text-white [.light_&]:text-gray-900">2.2 Customer account data</h3>
+                <ul>
+                    <li>Business name, billing contact name and email, billing address, payment details (processed by our payment processor — we do not store full card numbers).</li>
+                    <li>Agent configuration data: scripts, integrations connected (e.g., CRM, calendar), business hours, phone numbers used.</li>
+                </ul>
+                <h3 class="text-white [.light_&]:text-gray-900">2.3 Website data</h3>
+                <ul>
+                    <li>Standard web analytics (pages visited, referrer, device/browser type, approximate location derived from IP).</li>
+                    <li>Information submitted through contact, demo, or booking forms.</li>
+                </ul>
+
+                <h2 class="text-white [.light_&]:text-gray-900">3. Data storage and regional residency</h2>
+                <p>Voicerely determines where a Customer's call data is stored based on the Customer's registered business country at sign-up:</p>
+                <table>
+                    <tr><th>Customer region</th><th>Where call data is stored</th></tr>
+                    <tr><td>United States</td><td>Infrastructure located in the United States</td></tr>
+                    <tr><td>Australia</td><td>Infrastructure located in Australia</td></tr>
+                </table>
+                <p>Call audio, transcripts, and associated metadata for a given Customer are stored and processed within that Customer's assigned region. We do not transfer a Customer's call data to a different region for storage as part of normal operations. Some limited technical or support data (such as system logs needed to diagnose an outage) may briefly pass through shared infrastructure regardless of region; this does not include call audio or transcript content.</p>
+                <p>Note on subprocessors: certain third-party providers we rely on to deliver the service (see Section 5) operate their own global infrastructure. We select regional configurations with those providers where available, and we contractually require them to protect data consistent with this policy. If a specific subprocessor cannot guarantee in-region-only processing for a given feature, we disclose that limitation to affected Customers on request.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">4. How we use call data</h2>
+                <ul>
+                    <li>To operate the Agent: understanding caller intent, generating responses, and completing the task the Customer configured (e.g., booking an appointment, answering a question, qualifying a lead).</li>
+                    <li>To generate transcripts, summaries, and call analytics for the Customer's dashboard.</li>
+                    <li>To detect and prevent fraud, abuse, and violations of our Terms of Service.</li>
+                    <li>To improve the reliability of the underlying voice AI models, only where a Customer has not opted out and only using de-identified or aggregated data, unless a Customer has separately agreed to model-improvement use of its raw data.</li>
+                    <li>To comply with a legal obligation, respond to a lawful request from a government or regulatory authority, or protect the rights, safety, and property of Voicerely, our Customers, or others.</li>
+                </ul>
+
+                <h2 class="text-white [.light_&]:text-gray-900">5. Third parties and subprocessors</h2>
+                <p>We use a limited number of third-party providers to deliver the service, including telephony carriage (e.g., Twilio) and conversational voice AI processing (e.g., Retell AI), plus standard infrastructure, analytics, and payment providers. Each subprocessor is contractually bound to use call data only to provide services to us and not for their own independent purposes. A current subprocessor list is available on request.</p>
+                <p>We do not sell Caller or Customer call data to data brokers or third-party advertisers.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">6. Call recording and consent — important notice</h2>
+                <p>Call recording consent laws differ significantly by country, and within the United States, by state. <strong class="text-white [.light_&]:text-gray-900">The Customer deploying a Voicerely Agent is responsible for ensuring their use of call recording complies with the law in the jurisdiction where their Callers are located</strong>, including:</p>
+                <ul>
+                    <li><strong class="text-white [.light_&]:text-gray-900">United States:</strong> Some states require all parties to a call to consent to recording ("two-party" or "all-party consent" states, e.g., California, Florida, Illinois, Pennsylvania, Washington), while others require only one party's consent. Customers calling across state lines should assume the stricter standard applies unless advised otherwise by their own counsel.</li>
+                    <li><strong class="text-white [.light_&]:text-gray-900">Australia:</strong> Recording of private conversations is regulated at the state and territory level (surveillance/listening device legislation) in addition to the Telecommunications (Interception and Access) Act 1979 (Cth). Requirements on notifying or obtaining consent from a party to the call vary by state.</li>
+                </ul>
+                <p>Voicerely provides configuration options to support compliance (such as an automated recorded-line disclosure played at the start of a call), but enabling and correctly configuring these features, and obtaining any consent required beyond that, is the Customer's responsibility. Voicerely is not responsible for a Customer's failure to comply with call recording or consent laws applicable to their own calling activity.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">7. Data retention</h2>
+                <p>We retain call audio, transcripts, and metadata for as long as the Customer's account remains active, plus a limited period afterward to allow for account recovery, billing reconciliation, and legal/regulatory requirements, after which it is deleted or irreversibly de-identified. Customers can request deletion of specific call records or their full account's call data at any time, subject to any legal hold or retention obligation that may apply.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">8. Your rights</h2>
+                <h3 class="text-white [.light_&]:text-gray-900">8.1 United States</h3>
+                <p>Depending on the state, individuals may have rights to know what personal information is collected about them, request deletion, correct inaccurate information, and opt out of the sale or sharing of personal information for cross-context behavioral advertising (we do not engage in the latter). Where Voicerely is acting as a service provider/processor on behalf of a Customer, we direct such requests to the relevant Customer and support them in responding.</p>
+                <h3 class="text-white [.light_&]:text-gray-900">8.2 Australia</h3>
+                <p>Under the Privacy Act 1988 (Cth) and the Australian Privacy Principles, individuals generally have the right to access personal information held about them and to request correction of inaccurate information. Requests relating to a specific call should be directed to the Customer whose Agent handled that call; Voicerely will assist the Customer in responding within a reasonable timeframe.</p>
+                <h3 class="text-white [.light_&]:text-gray-900">8.3 Making a request</h3>
+                <p>To exercise any of these rights, or if you are unsure which Customer's Agent contacted you, email <a class="text-v-orange hover:text-orange-400" href="mailto:privacy@voicerely.com">privacy@voicerely.com</a> and we will direct your request appropriately or handle it directly where we are the responsible party.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">9. Security</h2>
+                <p>We use industry-standard safeguards to protect call data, including encryption of data in transit, access controls limiting who at Voicerely can access raw call content, and regular review of our subprocessors' security practices. No system is completely secure, and we cannot guarantee absolute security of any data transmitted over the internet or telephone network.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">10. Children's privacy</h2>
+                <p>Voicerely's platform is intended for business use and is not directed at children. We do not knowingly collect personal information from individuals under 16 through our website. Where a Caller who is a minor is inadvertently recorded during a call handled by a Customer's Agent, the Customer is responsible for ensuring their use of the platform complies with applicable child-privacy law in their jurisdiction.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">11. Changes to this policy</h2>
+                <p>We may update this Privacy Policy from time to time. If we make material changes, we will notify active Customers by email and update the "Last updated" date above. Continued use of the service after a change takes effect constitutes acceptance of the updated policy.</p>
+
+                <h2 class="text-white [.light_&]:text-gray-900">12. Contact us</h2>
+                <p>Questions about this policy or how your data is handled: <a class="text-v-orange hover:text-orange-400" href="mailto:privacy@voicerely.com">privacy@voicerely.com</a></p>
+
+                <div class="callout text-xs text-v-muted [.light_&]:text-gray-600 mt-10">
+                    This document is a general-purpose template prepared to reflect common US and Australian privacy law concepts relevant to a voice-AI SaaS business (including CCPA/CPRA-style state privacy rights and the Australian Privacy Principles). It is not legal advice and has not been reviewed by a lawyer licensed in either country. Have qualified counsel in each jurisdiction review this before publishing, particularly the call-recording consent section, before you rely on it.
+                </div>
+            </div>
+
+            <a href="index.html" class="inline-block mt-10 text-v-orange hover:text-orange-400 text-sm font-semibold">← Back to homepage</a>
         </div>
     </main>
+
+    <footer class="w-full border-t border-v-border/60 [.light_&]:border-gray-200 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-v-muted [.light_&]:text-gray-500">
+        <p>&copy; 2026 Voicerely. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="privacy.html" class="hover:text-v-orange transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-v-orange transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
     <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
 </body>
 </html>

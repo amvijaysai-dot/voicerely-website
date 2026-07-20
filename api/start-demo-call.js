@@ -1,7 +1,7 @@
 /**
  * Vercel Serverless Function: Start Demo Call
  * Creates a real outbound phone call via Retell AI + Twilio
- * 
+ *
  * POST /api/start-demo-call
  * Body: { phone: "+15551234567" }
  * Returns: { success: true, callId: "..." } or { success: false, error: "..." }
@@ -27,7 +27,7 @@ function checkPhoneRateLimit(phone) {
     const key = getRateLimitKey(phone);
     const now = Date.now();
     const lastCall = phoneCallLimits.get(key);
-    
+
     if (lastCall && (now - lastCall) < PHONE_COOLDOWN_MS) {
         return false;
     }
@@ -37,23 +37,23 @@ function checkPhoneRateLimit(phone) {
 function checkIpRateLimit(ip) {
     const now = Date.now();
     const record = ipRequestLimits.get(ip);
-    
+
     if (!record) {
         ipRequestLimits.set(ip, { count: 1, resetTime: now + IP_WINDOW_MS });
         return true;
     }
-    
+
     // Reset count if window has passed
     if (now > record.resetTime) {
         ipRequestLimits.set(ip, { count: 1, resetTime: now + IP_WINDOW_MS });
         return true;
     }
-    
+
     // Check if under limit
     if (record.count >= IP_MAX_REQUESTS) {
         return false;
     }
-    
+
     record.count++;
     return true;
 }
@@ -64,18 +64,32 @@ function recordPhoneCall(phone) {
 }
 
 function getClientIp(req) {
-    return req.headers['x-forwarded-for']?.split(',')[0]?.trim() || 
-           req.headers['x-real-ip'] || 
-           req.socket?.remoteAddress || 
+    return req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
+           req.headers['x-real-ip'] ||
+           req.socket?.remoteAddress ||
            'unknown';
 }
 
+function setCorsHeaders(res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+}
+
 export default async function handler(req, res) {
+    // Handle CORS preflight
+    if (req.method === 'OPTIONS') {
+        setCorsHeaders(res);
+        return res.status(200).end();
+    }
+
+    setCorsHeaders(res);
+
     // Only allow POST requests
     if (req.method !== 'POST') {
-        return res.status(405).json({ 
-            success: false, 
-            error: 'Method not allowed' 
+        return res.status(405).json({
+            success: false,
+            error: 'Method not allowed'
         });
     }
 
@@ -84,9 +98,9 @@ export default async function handler(req, res) {
 
     // Validate phone number is present
     if (!phone) {
-        return res.status(400).json({ 
-            success: false, 
-            error: 'Phone number is required' 
+        return res.status(400).json({
+            success: false,
+            error: 'Phone number is required'
         });
     }
 
@@ -94,26 +108,26 @@ export default async function handler(req, res) {
     // Must start with + followed by 1-15 digits (country code + national number)
     const e164Regex = /^\+[1-9]\d{1,14}$/;
     if (!e164Regex.test(phone)) {
-        return res.status(400).json({ 
-            success: false, 
-            error: 'Invalid phone number format. Please use E.164 format (e.g., +15551234567)' 
+        return res.status(400).json({
+            success: false,
+            error: 'Invalid phone number format. Please use E.164 format (e.g., +15551234567)'
         });
     }
 
     // Rate limiting checks
     const clientIp = getClientIp(req);
-    
+
     if (!checkPhoneRateLimit(phone)) {
-        return res.status(429).json({ 
-            success: false, 
-            error: 'Please wait before requesting another demo call' 
+        return res.status(429).json({
+            success: false,
+            error: 'Please wait before requesting another demo call'
         });
     }
-    
+
     if (!checkIpRateLimit(clientIp)) {
-        return res.status(429).json({ 
-            success: false, 
-            error: 'Please wait before requesting another demo call' 
+        return res.status(429).json({
+            success: false,
+            error: 'Please wait before requesting another demo call'
         });
     }
 
@@ -125,9 +139,9 @@ export default async function handler(req, res) {
     // Check that all required environment variables are set
     if (!RETELL_API_KEY || !RETELL_AGENT_ID || !RETELL_FROM_NUMBER) {
         console.error('Missing required environment variables for Retell AI');
-        return res.status(500).json({ 
-            success: false, 
-            error: 'Server configuration error. Please try again later.' 
+        return res.status(500).json({
+            success: false,
+            error: 'Server configuration error. Please try again later.'
         });
     }
 
@@ -152,9 +166,9 @@ export default async function handler(req, res) {
             // Log the actual error for debugging (server-side only)
             console.error('Retell API error:', data);
             // Return generic error to client (don't leak API details)
-            return res.status(500).json({ 
-                success: false, 
-                error: 'Failed to initiate call. Please try again.' 
+            return res.status(500).json({
+                success: false,
+                error: 'Failed to initiate call. Please try again.'
             });
         }
 
@@ -162,19 +176,19 @@ export default async function handler(req, res) {
         recordPhoneCall(phone);
 
         // Success - return call info to frontend
-        return res.status(200).json({ 
-            success: true, 
+        return res.status(200).json({
+            success: true,
             callId: data.call_id || data.id,
-            message: 'Call initiated successfully' 
+            message: 'Call initiated successfully'
         });
 
     } catch (error) {
         // Log the actual error for debugging (server-side only)
         console.error('Error creating phone call:', error);
         // Return generic error to client
-        return res.status(500).json({ 
-            success: false, 
-            error: 'Something went wrong. Please try again.' 
+        return res.status(500).json({
+            success: false,
+            error: 'Something went wrong. Please try again.'
         });
     }
 }
