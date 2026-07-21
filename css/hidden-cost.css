@@ -1,0 +1,827 @@
+/* ============================================================
+   Hidden Cost Section - Icons & Cards
+   ============================================================ */
+
+/* Section background and container */
+.hidden-cost-section {
+    position: relative;
+    padding: 5rem 1.5rem;
+}
+
+.hidden-cost-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+}
+
+.hidden-cost-gradient-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+}
+
+.hidden-cost-container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+/* Live counter */
+.hidden-cost-counter-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.hidden-cost-counter-label {
+    font-size: 0.875rem;
+    color: #a1a1aa;
+    font-weight: 500;
+}
+
+.hidden-cost-counter-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #f97316;
+    font-variant-numeric: tabular-nums;
+}
+
+.hidden-cost-counter-suffix {
+    font-size: 0.875rem;
+    color: #71717a;
+}
+
+/* Grid for 3 cards */
+.hidden-cost-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .hidden-cost-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card base styles */
+.hidden-cost-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hidden-cost-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(249, 115, 22, 0.4);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(249, 115, 22, 0.15);
+}
+
+/* Badge */
+.hidden-cost-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f97316;
+    width: fit-content;
+}
+
+/* Icon container - 80x80px */
+.hidden-cost-icon-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(249, 115, 22, 0.05));
+    border: 2px solid rgba(249, 115, 22, 0.3);
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hidden-cost-card:hover .hidden-cost-icon-container {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.25), rgba(249, 115, 22, 0.1));
+    border-color: rgba(249, 115, 22, 0.6);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.2);
+}
+
+/* Icon base - 48x48px viewBox */
+.hidden-cost-icon {
+    width: 48px;
+    height: 48px;
+}
+
+/* Card text styles */
+.hidden-cost-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0.5rem 0 0 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.hidden-cost-stat {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #f97316;
+    margin: 0;
+}
+
+.hidden-cost-description {
+    font-size: 0.8125rem;
+    color: #a1a1aa;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.hidden-cost-footer {
+    font-size: 0.75rem;
+    color: #71717a;
+    font-style: italic;
+    margin: 0;
+}
+
+/* CTA */
+.hidden-cost-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.hidden-cost-cta-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.hidden-cost-cta-subtext {
+    font-size: 0.875rem;
+    color: #a1a1aa;
+    margin-bottom: 1.25rem;
+}
+
+.hidden-cost-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 9999px;
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    transition: all 0.3s ease;
+}
+
+.hidden-cost-cta-button:hover {
+    background: rgba(249, 115, 22, 0.15);
+    border-color: rgba(249, 115, 22, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   Icon 1: Phone with Dollar Bills (Missed Calls)
+   ============================================================ */
+
+/* Idle animation: bills float up and down */
+@keyframes bill-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.bill {
+    transform-origin: center;
+    animation: bill-float 2.5s ease-in-out infinite;
+}
+
+.bill-1 { animation-delay: 0s; }
+.bill-2 { animation-delay: 0.3s; }
+.bill-3 { animation-delay: 0.6s; }
+
+/* Hover animation: bills flutter faster and fade */
+.hidden-cost-card:hover .bill {
+    animation-duration: 0.3s;
+    animation-name: bill-flutter;
+}
+
+@keyframes bill-flutter {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    25% { transform: translateY(-12px) rotate(-5deg); opacity: 0.8; }
+    50% { transform: translateY(-18px) rotate(5deg); opacity: 0.6; }
+    75% { transform: translateY(-12px) rotate(-3deg); opacity: 0.4; }
+    100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+
+/* Phone shake on hover */
+.hidden-cost-card:hover .hidden-cost-icon {
+    animation: phone-shake 0.3s ease-in-out infinite;
+}
+
+@keyframes phone-shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+}
+
+/* ============================================================
+   Icon 2: Split Phone - Moon/ZZZ vs Sound Waves (After Hours)
+   ============================================================ */
+
+/* Idle: sound waves pulse gently */
+@keyframes wave-pulse {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+.sound-waves path {
+    animation: wave-pulse 3s ease-in-out infinite;
+}
+
+.sound-waves path:nth-child(1) { animation-delay: 0s; }
+.sound-waves path:nth-child(2) { animation-delay: 0.5s; }
+.sound-waves path:nth-child(3) { animation-delay: 1s; }
+
+/* Hover: waves pulse outward 3 times */
+.hidden-cost-card:hover .sound-waves path {
+    animation-name: wave-pulse-out;
+    animation-duration: 0.3s;
+    animation-iteration-count: 3;
+}
+
+@keyframes wave-pulse-out {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Divider glows on hover */
+.hidden-cost-card:hover .hidden-cost-icon line[stroke="#6B7280"] {
+    stroke: #f97316;
+    filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.5));
+}
+
+/* ============================================================
+   Icon 3: Hourglass with Coins (Slow Response)
+   ============================================================ */
+
+/* Idle: single coin falls and resets */
+@keyframes coin-fall {
+    0% { transform: translateY(0); }
+    45% { transform: translateY(16px); }
+    50% { transform: translateY(16px) scale(1); }
+    51% { transform: translateY(16px) scale(0.8); }
+    52% { transform: translateY(16px) scale(1); }
+    100% { transform: translateY(0); }
+}
+
+.fall-coin {
+    animation: coin-fall 4s ease-in-out infinite;
+}
+
+.fall-1 { animation-delay: 0s; }
+.fall-2 { animation-delay: 0.5s; }
+.fall-3 { animation-delay: 1s; }
+.fall-4 { animation-delay: 1.5s; }
+.fall-5 { animation-delay: 2s; }
+
+/* Hover: coin drops with color change */
+.hidden-cost-card:hover .fall-coin {
+    animation-duration: 0.6s;
+    animation-name: coin-drop-hover;
+}
+
+@keyframes coin-drop-hover {
+    0% { transform: translateY(0); fill: #FBBF24; }
+    45% { transform: translateY(16px); fill: #FBBF24; }
+    50% { transform: translateY(16px); fill: #4B5563; }
+    100% { transform: translateY(16px); fill: #4B5563; }
+}
+
+/* Hourglass tilt on hover */
+.hidden-cost-card:hover .hidden-cost-icon path {
+    animation: hourglass-tilt 0.6s ease-in-out infinite;
+}
+
+@keyframes hourglass-tilt {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+}
+
+/* ============================================================
+   ROI Calculator Section
+   ============================================================ */
+
+.roi-calculator-section {
+    padding: 5rem 1.5rem;
+    position: relative;
+}
+
+.roi-calculator-container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+/* Two-column grid */
+.roi-calculator-grid {
+    display: grid;
+    gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+    .roi-calculator-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+/* Left: Config Panel */
+.roi-config-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.roi-config-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.roi-config-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.roi-config-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.roi-config-input:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+.roi-config-input::placeholder {
+    color: #71717a;
+}
+
+/* Slider styling */
+.roi-config-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.roi-config-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #f97316;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+    transition: all 0.2s ease;
+}
+
+.roi-config-slider::-webkit-slider-thumb:active {
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.5);
+    transform: scale(1.1);
+}
+
+.roi-config-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #f97316;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+    transition: all 0.2s ease;
+}
+
+.roi-config-slider::-moz-range-thumb:active {
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.5);
+    transform: scale(1.1);
+}
+
+.roi-config-slider::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, #f97316, rgba(249, 115, 22, 0.3));
+    height: 6px;
+    border-radius: 3px;
+}
+
+/* Number input - no dropdown arrow */
+.roi-config-input-number {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    background-image: none;
+    padding-right: 1rem;
+}
+
+/* Select dropdown - with custom arrow */
+select.roi-config-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23F97316' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+/* Dropdown options dark mode */
+select.roi-config-input option {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+select.roi-config-input option:hover,
+select.roi-config-input option:focus,
+select.roi-config-input option:checked {
+    background-color: rgba(249, 115, 22, 0.3);
+    color: #ffffff;
+}
+
+.roi-slider-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #f97316;
+    text-align: right;
+}
+
+/* Right: Results Dashboard */
+.roi-dashboard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.roi-dashboard-main {
+    text-align: center;
+    position: relative;
+}
+
+.roi-main-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f97316;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+@media (min-width: 768px) {
+    .roi-main-value {
+        font-size: 48px;
+    }
+}
+
+.roi-main-label {
+    font-size: 1.125rem;
+    color: #a1a1aa;
+    font-weight: 500;
+}
+
+/* Recovery Potential Gauge - Semi-circle SVG */
+.gauge-container {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 40px;
+}
+
+.gauge-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.gauge-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.gauge-percent {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+}
+
+.gauge-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 4px;
+}
+
+/* Progress bar for Recovery Potential */
+.roi-progress-section {
+    margin-top: 1.5rem;
+}
+
+.roi-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #a1a1aa;
+    margin-bottom: 0.5rem;
+}
+
+.roi-progress-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.roi-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f97316, #fb923c);
+    border-radius: 6px;
+    transition: width 0.3s ease-out;
+}
+
+/* KPI Cards - 4 in a row */
+.roi-kpis {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    .roi-kpis {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.roi-kpi-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    min-height: 100px;
+    transition: all 0.3s ease;
+}
+
+.roi-kpi-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-4px);
+}
+
+.roi-kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+}
+
+.roi-kpi-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 4px;
+}
+
+/* CTA Buttons */
+.roi-cta-button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 32px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    color: white;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+}
+
+.roi-cta-button-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 30px rgba(249, 115, 22, 0.5);
+    transform: translateY(-2px);
+}
+
+.roi-cta-button-primary:active {
+    transform: translateY(0);
+}
+
+.roi-cta-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 32px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    background: transparent;
+    color: #F97316;
+    border: 2px solid #F97316;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.roi-cta-button-secondary:hover {
+    background: rgba(249, 115, 22, 0.1);
+    border-color: #fb923c;
+}
+
+.roi-cta-button-secondary:active {
+    background: rgba(249, 115, 22, 0.2);
+}
+
+/* Business Snapshot */
+.roi-snapshot {
+    margin-top: 1rem;
+}
+
+.roi-snapshot-title {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f97316;
+    margin-bottom: 1rem;
+}
+
+.roi-snapshot-desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .roi-snapshot-desktop {
+        display: block;
+    }
+}
+
+.roi-snapshot-item {
+    font-size: 0.875rem;
+    color: #a1a1aa;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.roi-snapshot-check {
+    color: #10b981;
+    margin-right: 0.25rem;
+}
+
+.roi-snapshot-value {
+    color: #f97316;
+    font-weight: 600;
+}
+
+.roi-snapshot-item.highlight {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Mobile snapshot */
+.roi-snapshot-mobile {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .roi-snapshot-mobile {
+        display: none;
+    }
+}
+
+.roi-snapshot-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-size: 0.875rem;
+}
+
+.roi-snapshot-row:last-child {
+    border-bottom: none;
+}
+
+.roi-snapshot-label {
+    color: #a1a1aa;
+}
+
+/* Disclaimer */
+.roi-disclaimer {
+    font-size: 0.75rem;
+    color: #71717a;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* Number animation */
+@keyframes count-up {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-count {
+    animation: count-up 0.3s ease-out;
+}
+
+/* KPI pulse animation */
+@keyframes kpi-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.kpi-pulse {
+    animation: kpi-pulse 0.3s ease-out;
+}
+
+/* Light mode adjustments */
+.light .hidden-cost-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light .hidden-cost-heading {
+    color: #111827;
+}
+
+.light .hidden-cost-description,
+.light .hidden-cost-footer {
+    color: #4b5563;
+}
+
+.light .roi-config-input {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #111827;
+}
+
+.light .roi-dashboard {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light .roi-kpi-card {
+    background: rgba(0, 0, 0, 0.02);
+}

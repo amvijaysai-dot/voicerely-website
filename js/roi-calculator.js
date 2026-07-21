@@ -83,12 +83,13 @@ function calculateROI() {
     const annualRevenueLost = monthlyRevenueLost * 12;
     
     // Update results with animation
-    const missedCallsEl = document.getElementById('missedCallsResult');
-    const lostClientsEl = document.getElementById('lostClientsResult');
+    const missedCallsEl = document.getElementById('kpiMissedCalls');
+    const lostClientsEl = document.getElementById('kpiPotentialCustomers');
     const monthlyRevenueEl = document.getElementById('monthlyRevenueResult');
-    const annualRevenueEl = document.getElementById('annualRevenueResult');
-    const breakEvenEl = document.getElementById('breakEvenResult');
-    const recoveryGauge = document.getElementById('recoveryGauge');
+    const annualRevenueEl = document.getElementById('kpiMonthlyLost');
+    const breakEvenEl = document.getElementById('kpiBreakEven');
+    const recoveryProgress = document.getElementById('recoveryProgress');
+    const recoveryPercent = document.getElementById('recoveryPercent');
     
     // Snapshot elements (desktop)
     const snapshotMissedCalls = document.getElementById('snapshotMissedCalls');
@@ -113,6 +114,12 @@ function calculateROI() {
     }
     if (annualRevenueEl) {
         animateValue(annualRevenueEl, annualRevenueEl.textContent.replace(/[^0-9.-]+/g,"") || 0, annualRevenueLost, 800, true);
+    }
+    
+    // Update mobile snapshot annual revenue
+    const snapshotAnnualRevenueMobile = document.getElementById('snapshotAnnualRevenueMobile');
+    if (snapshotAnnualRevenueMobile) {
+        snapshotAnnualRevenueMobile.textContent = formatCurrency(annualRevenueLost);
     }
     if (breakEvenEl) {
         const breakEven = calculateBreakEven(monthlyRevenueLost, planType);
@@ -148,10 +155,54 @@ function calculateROI() {
     }
     
     // Update gauge (95% recovery potential)
-    if (recoveryGauge) {
-        recoveryGauge.style.height = '95%';
+    const gaugeFill = document.getElementById('gaugeFill');
+    const gaugePercent = document.getElementById('recoveryPercent');
+    
+    if (gaugeFill && gaugePercent) {
+        // Animate gauge arc from 0% to 95%
+        const circumference = 2 * Math.PI * 80; // 2 * PI * radius
+        const targetPercent = 95;
+        const targetOffset = circumference - (circumference * targetPercent / 100);
+        
+        // Set initial state (fully visible)
+        gaugeFill.style.strokeDasharray = circumference;
+        gaugeFill.style.strokeDashoffset = '0';
+        
+        // Animate to target
+        let start = null;
+        const duration = 800;
+        const initialOffset = circumference;
+        
+        function animateGauge(timestamp) {
+            if (!start) start = timestamp;
+            const progress = Math.min((timestamp - start) / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentOffset = initialOffset - (initialOffset - targetOffset) * easeOut;
+            
+            gaugeFill.style.strokeDashoffset = currentOffset;
+            
+            // Also animate the percentage number
+            const currentPercent = Math.round(targetPercent * easeOut);
+            gaugePercent.textContent = currentPercent + '%';
+            
+            if (progress < 1) {
+                requestAnimationFrame(animateGauge);
+            }
+        }
+        
+        requestAnimationFrame(animateGauge);
     }
+    
+    // Add pulse animation to KPI cards
+    const kpiCards = document.querySelectorAll('.roi-kpi-card');
+    kpiCards.forEach(card => {
+        card.classList.add('kpi-pulse');
+        setTimeout(() => {
+            card.classList.remove('kpi-pulse');
+        }, 300);
+    });
 }
+
 
 // Initialize ROI Calculator
 document.addEventListener('DOMContentLoaded', function() {
