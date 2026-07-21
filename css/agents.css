@@ -459,7 +459,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -472,12 +472,44 @@
 
 .agent-card:hover {
     transform: translateY(-8px);
-    border-color: var(--v-orange, #f97316);
-    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
+    border-color: rgba(249, 115, 22, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(249, 115, 22, 0.1);
 }
 
 .light .agent-card:hover {
-    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 30px rgba(249, 115, 22, 0.1);
+}
+
+/* Card icon container - hover effect */
+.agent-card:hover .agent-card-icon {
+    background: rgba(249, 115, 22, 0.2);
+    border-color: rgba(249, 115, 22, 0.4);
+}
+
+/* Badge hover effect */
+.agent-card:hover .agent-card-badge {
+    background: rgba(249, 115, 22, 0.25);
+}
+
+/* Agent card icon container - match home page styling */
+.agent-card-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: var(--v-orange, #f97316);
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.agent-card-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2;
 }
 
 .agent-card-badge {
@@ -492,22 +524,6 @@
     border-radius: 999px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-}
-
-.agent-card-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    color: var(--v-orange, #f97316);
-}
-
-.agent-card-icon svg {
-    width: 32px;
-    height: 32px;
-    stroke-width: 1.5;
 }
 
 .agent-card-name {
@@ -573,22 +589,50 @@
 
 .agent-card-check {
     flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
     color: var(--v-orange, #f97316);
 }
 
+/* Feature category label */
+.agent-card-feature-category {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 24px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+/* Feature divider */
+.agent-card-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 16px 0;
+}
+
+/* Pricing hint */
+.agent-card-pricing {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    margin-top: 12px;
+}
+
+/* CTA button - full width, transparent with orange border */
 .agent-card-cta {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background: var(--v-orange, #f97316);
-    color: #1a0a02;
-    border-radius: 999px;
-    text-decoration: none;
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 2px solid #F97316;
+    color: #F97316;
+    border-radius: 12px;
     font-weight: 600;
     font-family: 'Plus Jakarta Sans', sans-serif;
     transition: all 0.3s ease;
@@ -596,9 +640,16 @@
 }
 
 .agent-card-cta:hover {
-    background: #e0650f;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(249, 115, 22, 0.3);
+    background: rgba(249, 115, 22, 0.15);
+}
+
+.light .agent-card-cta {
+    border-color: var(--v-orange, #f97316);
+    color: var(--v-orange, #f97316);
+}
+
+.light .agent-card-cta:hover {
+    background: rgba(249, 115, 22, 0.1);
 }
 
 .agent-card-cta-arrow {
@@ -885,6 +936,73 @@
     background: #e0650f;
     transform: translateY(-2px);
     box-shadow: 0 10px 26px rgba(249, 115, 22, 0.3);
+}
+
+/* ========================================
+   Trust & Privacy Section (voicerelyagents.html)
+   ======================================== */
+
+/* Trust matrix grid */
+.trust-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Trust matrix card */
+.trust-matrix-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+}
+
+.trust-matrix-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    color: #F97316;
+}
+
+.trust-matrix-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Trust matrix title - big white title */
+.trust-matrix-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin: 16px 0 8px;
+    text-align: center;
+}
+
+/* Trust matrix subtitle - orange text */
+.trust-matrix-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #F97316;
+    margin: 0 0 8px;
+    text-align: center;
+}
+
+.trust-matrix-copy {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .trust-matrix-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ========================================
@@ -1534,4 +1652,71 @@
     font-weight: 500;
     color: #a1a1aa;
     font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ========================================
+   Trust & Privacy Section (voicerelyagents.html)
+   ======================================== */
+
+/* Trust matrix grid */
+.trust-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Trust matrix card */
+.trust-matrix-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+}
+
+.trust-matrix-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    color: #F97316;
+}
+
+.trust-matrix-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Trust matrix title - big white title */
+.trust-matrix-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin: 16px 0 8px;
+    text-align: center;
+}
+
+/* Trust matrix subtitle - orange text */
+.trust-matrix-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #F97316;
+    margin: 0 0 8px;
+    text-align: center;
+}
+
+.trust-matrix-copy {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .trust-matrix-grid {
+        grid-template-columns: 1fr;
+    }
 }

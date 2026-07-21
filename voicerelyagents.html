@@ -101,94 +101,108 @@
         </div>
       </section>
 
-      <!-- Section 3: AI Employee Cards -->
+<!-- Section 3: AI Employee Cards -->
       <section class="w-full pt-16 pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Card 1: Frontline -->
+<!-- Card 1: Frontline -->
             <div class="agent-card">
               <div class="agent-card-badge">Frontline</div>
               <div class="agent-card-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><path d="M4 14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2z"/><path d="M20 14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"/><path d="M18 17v1a3 3 0 0 1-3 3h-3"/></svg>
+                <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
               </div>
               <h3 class="agent-card-name">Frontline</h3>
               <p class="agent-card-tagline">Your 24/7 front desk</p>
               <p class="agent-card-description">
-                Frontline answers every inbound call with human-like conversation, qualifies leads in real-time, and books appointments directly into your calendar.
+                AI receptionist that answers calls, qualifies leads, and books appointments 24/7.
               </p>
-              <ul class="agent-card-features">
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Natural voice conversations</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Real-time lead qualification</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Calendar &amp; CRM synchronization</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Smart live transfer to human operators</li>
-                 <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Rescheduling &amp; cancellations</li>
-               </ul>
-              <div class="agent-card-actions">
-                <button type="button" class="agent-card-hear" onclick="playAgentSample('Frontline')">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Hear Frontline
-                </button>
-                <details class="agent-card-details">
-                  <summary class="agent-card-learnmore">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></summary>
-                  <p class="agent-card-detail">Frontline is your always-on receptionist. We train it on your scripts, FAQs, and booking flow, then connect it to your CRM and calendar so every inbound call is answered, qualified, and booked — without a human ever picking up.</p>
-                </details>
+              <div class="agent-card-features-group">
+                <p class="agent-card-feature-category">CORE CAPABILITIES</p>
+                <ul class="agent-card-features">
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Natural voice conversations</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Real-time lead qualification</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Calendar & CRM synchronization</li>
+                </ul>
+                <hr class="agent-card-divider">
+                <p class="agent-card-feature-category">ADVANCED</p>
+                <ul class="agent-card-features">
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Smart live transfer to human operators</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Rescheduling & cancellations</li>
+                </ul>
               </div>
+              <button type="button" class="agent-card-cta" onclick="playAgentSample('Frontline')">
+                &#9654; Hear Frontline
+              </button>
+              <p class="agent-card-pricing">Starting at $249/mo</p>
             </div>
 
             <!-- Card 2: Pipeline -->
             <div class="agent-card">
               <div class="agent-card-badge">Pipeline</div>
               <div class="agent-card-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M13 7L9 13h4l-1 4 5-7h-4l1-3z" fill="currentColor" stroke="none"/></svg>
+                <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
               </div>
               <h3 class="agent-card-name">Pipeline</h3>
               <p class="agent-card-tagline">Your speed-to-lead engine</p>
               <p class="agent-card-description">
-                Pipeline calls back every missed lead within seconds, follows up with persistence, and converts prospects while you sleep.
+                AI sales assistant that calls back missed leads in seconds and converts prospects while you sleep.
               </p>
-              <ul class="agent-card-features">
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Instant speed-to-lead callback</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Persistent multi-touch follow-up</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Live CRM data injection</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Post-call SMS/Email updates</li>
-              </ul>
-              <div class="agent-card-actions">
-                <button type="button" class="agent-card-hear" onclick="playAgentSample('Pipeline')">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Hear Pipeline
-                </button>
-                <details class="agent-card-details">
-                  <summary class="agent-card-learnmore">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></summary>
-                  <p class="agent-card-detail">Pipeline is your speed-to-lead engine. It calls back every missed lead within seconds, runs persistent multi-touch follow-up, and scores opportunities so your team only spends time on deals that are ready to close.</p>
-                </details>
+              <div class="agent-card-features-group">
+                <p class="agent-card-feature-category">CORE CAPABILITIES</p>
+                <ul class="agent-card-features">
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Instant speed-to-lead callback</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Persistent multi-touch follow-up</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Live CRM data injection</li>
+                </ul>
+                <hr class="agent-card-divider">
+                <p class="agent-card-feature-category">ADVANCED</p>
+                <ul class="agent-card-features">
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Post-call SMS/Email updates</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead scoring & prioritization</li>
+                </ul>
               </div>
+              <button type="button" class="agent-card-cta" onclick="playAgentSample('Pipeline')">
+                &#9654; Hear Pipeline
+              </button>
+              <p class="agent-card-pricing">Starting at $249/mo</p>
             </div>
 
             <!-- Card 3: Revive -->
             <div class="agent-card">
-              <div class="agent-card-badge">REVIVE</div>
+              <div class="agent-card-badge">Revive</div>
               <div class="agent-card-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>
+                <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
               </div>
               <h3 class="agent-card-name">Revive</h3>
               <p class="agent-card-tagline">Your customer win-back engine</p>
               <p class="agent-card-description">
-                Revive reaches out to past customers who've gone quiet, reminds them you're still here, and books them back in — turning dormant contacts into repeat revenue.
+                AI win-back specialist that re-engages dormant customers and turns old inquiries into revenue.
               </p>
-              <ul class="agent-card-features">
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Automated win-back campaigns</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized re-engagement scripts</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dormant customer scoring</li>
-                <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Repeat booking conversion</li>
-              </ul>
-              <div class="agent-card-actions">
-                <button type="button" class="agent-card-hear" onclick="playAgentSample('Revive')">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Hear Revive
-                </button>
-                <details class="agent-card-details">
-                  <summary class="agent-card-learnmore">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></summary>
-                  <p class="agent-card-detail">Revive is your customer win-back engine. It identifies past customers who've gone quiet, runs personalized re-engagement outreach, scores who's most likely to return, and books them back in — turning dormant contacts into repeat revenue.</p>
-                </details>
+              <div class="agent-card-features-group">
+                <p class="agent-card-feature-category">CORE CAPABILITIES</p>
+                <ul class="agent-card-features">
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Automated win-back campaigns</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized re-engagement scripts</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dormant customer scoring</li>
+                </ul>
+                <hr class="agent-card-divider">
+                <p class="agent-card-feature-category">ADVANCED</p>
+                <ul class="agent-card-features">
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Repeat booking conversion</li>
+                  <li><svg class="agent-card-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Revenue recovery analytics</li>
+                </ul>
               </div>
+              <button type="button" class="agent-card-cta" onclick="playAgentSample('Revive')">
+                &#9654; Hear Revive
+              </button>
+              <p class="agent-card-pricing">Starting at $249/mo</p>
             </div>
 
            </div>
@@ -412,12 +426,12 @@
         </div>
       </section>
 
-      <!-- Section 6.5: Trust & Security -->
+<!-- Section 6.5: Trust & Security -->
       <section class="w-full py-16 md:py-24 border-t border-v-border/20 [.light_&]:border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="text-center mb-12 md:mb-16">
             <div class="inline-flex items-center px-3 py-1 rounded-full bg-v-orange/10 border border-v-orange/20 text-v-orange text-xs font-semibold tracking-wider uppercase mb-6">
-              TRUST &amp; PRIVACY
+              TRUST & PRIVACY
             </div>
             <h2 class="text-[28px] md:text-[40px] font-extrabold text-white [.light_&]:text-gray-900 tracking-tight mb-3 font-sans">
               Built for the Front Desk You Can Rely On
@@ -428,30 +442,34 @@
           </div>
 
           <div class="trust-matrix-grid">
+            
+            <!-- Card 1: Ultra-Low Latency -->
             <div class="trust-matrix-card">
               <div class="trust-matrix-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               </div>
-              <div class="trust-matrix-metric">Ultra-Low Latency</div>
-              <h3 class="trust-matrix-title">Natural Conversations</h3>
+              <h3 class="trust-matrix-title">Ultra-Low Latency</h3>
+              <p class="trust-matrix-subtitle">Natural Conversations</p>
               <p class="trust-matrix-copy">Engineered for natural, human-like conversation response times so every caller feels heard.</p>
             </div>
 
+            <!-- Card 2: Seamless Scalability -->
             <div class="trust-matrix-card">
               <div class="trust-matrix-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               </div>
-              <div class="trust-matrix-metric">Seamless Scalability</div>
-              <h3 class="trust-matrix-title">Smooth Under Load</h3>
+              <h3 class="trust-matrix-title">Seamless Scalability</h3>
+              <p class="trust-matrix-subtitle">Smooth Under Load</p>
               <p class="trust-matrix-copy">Scales to handle high inbound traffic flows smoothly — your front desk never misses a beat during busy periods.</p>
             </div>
 
+            <!-- Card 3: SOC2-Aligned Security -->
             <div class="trust-matrix-card">
               <div class="trust-matrix-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8 3-8-3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
               </div>
-              <div class="trust-matrix-metric">SOC2-Aligned Security</div>
-              <h3 class="trust-matrix-title">Privacy-First Protection</h3>
+              <h3 class="trust-matrix-title">SOC2-Aligned Security</h3>
+              <p class="trust-matrix-subtitle">Privacy-First Protection</p>
               <p class="trust-matrix-copy">Enterprise-grade encryption and secure data-handling practices aligned to SOC2 principles — built to safeguard sensitive legal and medical records.</p>
             </div>
           </div>
